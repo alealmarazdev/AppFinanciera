@@ -1,16 +1,14 @@
 import React from 'react';
-
 import { BrowserRouter } from 'react-router-dom'
-
-/* 
-import Router from './Router'; */
 
 import './app.css';
 
+import Router from './Router';
+
 const App = () => (
   <BrowserRouter>
-    <section id="app">
-      <h1>hola</h1>
+    <section id="app">  
+      <Router />
     </section>
   </BrowserRouter>
 )
