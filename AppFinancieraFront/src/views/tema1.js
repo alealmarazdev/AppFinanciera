@@ -1,12 +1,14 @@
 import React from 'react';
 
 import TitleGames from '../components/TitleAndSubtitle';
+import Navbar from '../components/Navbar'
 
 
 function Tema1 () {
      return (
       <div >
-        <TitleGames title="hola" subtitle="hola2"/>
+        <Navbar />
+        <TitleGames title="MODELO DE NEGOCIO" subtitle="¡Conceptos básicos para comenzar a generar dinero!"/>
       </div>
     )
 }

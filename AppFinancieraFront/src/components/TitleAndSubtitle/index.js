@@ -10,10 +10,10 @@ function TitleGames(props) {
   return (
     <div className={styles.card}>
       <div className={styles.body}>
-         <h1 className={styles.title}>
+         <h1 className={`${styles.title} text-center`}>
           { title }
         </h1>
-        <h2 className={styles.subtitle}>
+        <h2 className={`${styles.subtitle} text-center`}>
           { subtitle }
         </h2>      
       </div>
