@@ -1,59 +1,85 @@
-/* EJEMPLO */
-const { Schema, model } = require('mongoose')
+const {Schema , model} = require ('mongoose');
 
 const userSchema = new Schema({
-  email: {
-    type: String,
-    minLength: 6,
-    maxLength: 100,
-    unique: true
-  },
-  name: {
-    type: String,
-    minLength: 2,
-    maxLength: 50,
+  email:{
+    type:String,
+    minlength: 5,
+    maxlength: 100,
     required: true
   },
-  lastName: {
+
+  password:{
     type: String,
-    minLength: 2,
-    maxLength: 50,
+    required: true,
+  },
+
+  fullName:{
+    type:String,
+    minlength: 10,
+    maxlength: 100,
+    required: true   
+  },
+
+  userName:{
+    type:String,
+    minlength: 3,
+    maxlength: 50,
     required: true
   },
-  age: {
+
+  age:{
     type: Number,
-    min: 18,
+    min: 15,
+    max: 100
+  },
+
+  gender:{
+    type: String,
+    enum: [
+      'male',
+      'female',
+      'other'
+    ],
     required: true
   },
-  password: {
-    type: String,
-    requiered: true,
-    minLength: '1',
-    maxLength: '200'
+
+  createdAt:{
+    type: Date,
+    required: true
   },
-  type: {
-    type: String,
-    default: 'adopter',
-    enum: [
-      'admin',
-      'adopter'
-    ]
+
+  isActived:{
+    type: Boolean,
+    default: true,
   },
-  address: {
-    type: String,
-    requiered: true,
-    maxLength: 200
+
+  isBloquedForum:{
+    type: Boolean,
+    default: false,
   },
-  phone: {
+
+  lastLogin:{
+    type: Date
+  },
+
+  ocupation:{
     type: String,
-    requiered: true,
-    minLength: 8,
-    maxLength: 15,
-    patter: /^[0-9]{8,15}$/
+    maxlength: 50
+  },
+
+  city:{
+    type: String,
+    maxlength: 50
+  },
+
+  score:{
+    type: Number,
+    default:0
   }
+  
 })
 
 module.exports = {
-  schema: userSchema,
+  Schema: userSchema,
   model: model('Users', userSchema)
 }
