@@ -14,12 +14,8 @@ const progressSchema= new Schema ({
   idTheme:{
     type: String,
     required: true,
-  },
-
-  idProgress:{
-    type: String,
-    required: true,
   }
+  
 })
 
 module.exports={
