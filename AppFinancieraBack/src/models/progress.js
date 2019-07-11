@@ -6,7 +6,7 @@ const progressSchema= new Schema ({
     required: true,
   },
 
-  idModule:{
+  idTopic:{
     type: String,
     required: true,
   },

@@ -1,6 +1,6 @@
 const {Schema, model}=require('mongoose');
 
-const moduleSchema = new Schema({
+const topicSchema = new Schema({
   name: {
     type: String,
     minlength: 3,
@@ -27,6 +27,6 @@ const moduleSchema = new Schema({
 })
 
 module.exports= {
-  Schema: moduleSchema,
-  model: model('Modules', moduleSchema)
+  Schema: topicSchema,
+  model: model('Topics', topicSchema)
 }

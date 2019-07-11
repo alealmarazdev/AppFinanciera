@@ -16,26 +16,28 @@ const themeSchema = new Schema({
   description:{
     type: String,
     minlength: 10,
-    maxlength: 50000,
+    maxlength: 100,
     required: true
     },
 
-  points:{
+  expPoints:{
     type: Number,
     required: true
   },
 
   content:{
     type: String,
+    maxlength: 10000
   },
       
   video:{
-    type: String,
+    type: String
   },
 
-  level:{
+  numSerial:{
     type: Number,
-    required: true
+    required: true,
+    default: true
   }
 
 })
