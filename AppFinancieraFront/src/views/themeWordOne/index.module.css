@@ -1,0 +1,77 @@
+ .bgGame{
+ background-image: url('../../asset/image/Background/bg-img_top.svg');
+ width: 100vw;
+ height: 50vh;
+ position: absolute;
+ left: 32vw;
+ top: 45vh;
+ background-repeat: no-repeat;
+ background-size: inherit;
+
+}
+ 
+.mapeado {
+    position: absolute;
+    top: 33vh;
+    left: 47vw;
+    display: flex;
+    flex-direction: column
+}
+ .mapeado img{
+    width:100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapeado1 {
+    position: absolute;
+    top: 57vh;
+    left: 22vw;
+    display: flex;
+    flex-direction: column
+}
+.mapeado1 img{
+    width:100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapeado2 {
+    position: absolute;
+    top: 80vh;
+    left: 55vw;
+    display: flex;
+    flex-direction: column
+}
+.mapeado2 img{
+    width:100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bgContinue{
+    background-image: url('../../asset/image/Background/bg-img_repeat.svg');
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    left: 28vw;
+    top: 95vh;
+    background-repeat: no-repeat
+}
+
+.mapeado3 {
+    position: absolute;
+    top: 105vh;
+    left: 24vw;
+    display: flex;
+    flex-direction: column
+}
+.mapeado3 img{
+    width:100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
