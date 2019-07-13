@@ -8,6 +8,9 @@ import Content from './views/content'
 import ThemeWordOne from './views/themeWordOne/index'
 import Theme from './views/themes';
 import Game1 from './views/game1'
+import Game2 from './views/game2'
+import Game3 from './views/game3'
+import Game4 from './views/game4'
 import Blog from './views/blog';
 
 const Router = () => (
@@ -18,7 +21,7 @@ const Router = () => (
       exact
     />
      <Route
-      path="/content"
+      path="/theme"
       component={Content}
       exact
     />
@@ -34,11 +37,25 @@ const Router = () => (
       exact
     />
     <Route
-      path="/theme/:number/game/:gamenumber"
+      path="/game"
       component={Game1}
       exact
     />
-
+    <Route
+      path="/gameTwo"
+      component={Game2}
+      exact
+    />
+      <Route
+      path="/gameThree"
+      component={Game3}
+      exact
+    />
+    <Route
+      path="/gameThree"
+      component={Game4}
+      exact
+    />
     <Route
       path="/blog"
       component={Blog}

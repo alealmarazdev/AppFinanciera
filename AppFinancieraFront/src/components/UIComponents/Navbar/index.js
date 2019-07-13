@@ -15,7 +15,7 @@ function Navbar(){
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto mr-auto align-items-end">
             <li className="nav-item active mx-3">
-              <Link className="nav-link pb-0" to="/content">Aprender <span class="sr-only ">(current)</span></Link>
+              <Link className="nav-link pb-0" to="/theme">Aprender <span class="sr-only ">(current)</span></Link>
             </li>
             <li className="nav-item active mx-3">
               <Link className="nav-link pb-0" to="/blog">Artículos</Link>
