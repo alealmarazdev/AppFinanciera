@@ -1,0 +1,18 @@
+h1 {
+    font-size: 300%;
+    color: #3AAE9B !important;
+    margin-top: 10%;
+}
+
+h2 {
+    font-size: 200%;
+    color: black !important;
+    margin-bottom: 7%;
+}
+
+h3 {
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
