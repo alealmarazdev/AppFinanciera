@@ -75,11 +75,12 @@ const getById = async (userId) => {
   return cleanUser
 }
 
-const updateScore = async (userId, addPoint) => {
-  const user = await User.findById(userId).lean()
-  const { score } = user
-  score += addPoint
-}
+// const updateScore = async (userId, points) => {
+//  const user = await User.findById(userId).lean()
+//  let { score } = user
+//  score = score + points
+//  return score
+// }
 
 module.exports = {
   signUp,

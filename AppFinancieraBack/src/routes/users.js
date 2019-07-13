@@ -140,4 +140,29 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+// router.get('/score/:id', (req, res) => {
+//  try {
+//    const { id } = req.params
+//    const { points } = req.body
+//    console.log(points)
+//    const newScore = user.updateScore(id, points)
+//    res.json({
+//      message: 'Score actualizado',
+//      success: true,
+//      payload: {
+//        newScore,
+//        points
+//      }
+//    })
+//  } catch (error) {
+//    console.log('error: ', error)
+//    res.status = 400
+//    res.json({
+//      success: false,
+//      message: 'no se pudo actualizar el score',
+//      error: error.massege
+//    })
+//  }
+// })
+
 module.exports = router
