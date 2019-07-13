@@ -1,86 +1,89 @@
 .activatechatbot {
-	width: 50px;
-	height: 50px;
-	border: 1px solid red;
-	font-size: 30px;
-	text-align: center;
-	cursor: pointer;
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	background: white;
-	color: #320544;
-	border-radius: 50%;
-	border: none;
-	box-shadow: 3px 3px 3px #cdcdcd;
-	border: 1px solid #333;
-	z-index: 9998;
-	transition: all 0.75s ease;
-  }
-  
-  .chatbotwrapper {
-	position: fixed;
-	top: 0;
-	right: 0;
-	background: #dadada;
-	height: 100vh;
-	z-index: 9999;
-	width: 30%;
-	border: 1px solid #333;
-	transition: all 0.75s ease;
-  }
-  .chatbotwrapper .chatbotheader {
-	height: 50px;
-	border-bottom: 1px solid #333;
-	display: flex;
-	justify-content: space-between;
-	padding: 15px;
-	align-items: center;
-	font-size: 18px;
-	background: white;
-  }
-  .chatbotwrapper .chatbotbody {
-	padding: 15px;
-	height: calc(100vh - 120px);
-	overflow-y: scroll;
-  }
-  .chatbotwrapper .chatbotbody .chatbotdialog, .chatbotwrapper .chatbotbody .userdialog {
-	display: flex;
-	align-items: flex-end;
-	margin-bottom: 15px;
-  }
-  .chatbotwrapper .chatbotbody .chatbotdialog i, .chatbotwrapper .chatbotbody .userdialog i {
-	margin-right: 15px;
-	margin-bottom: 15px;
-  }
-  .chatbotwrapper .chatbotbody .chatbotdialog span, .chatbotwrapper .chatbotbody .user-dialog span {
-	border: 1px solid #333;
-	padding: 15px;
-	border-radius: 15px;
-	width: 100%;
-	background: white;
-  }
-  .chatbotwrapper .chatbotbody .userdialog span {
-	width: auto;
-	margin-left: auto;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	background: rgba(0, 0, 255, 0.1);
-  }
-  .chatbotwrapper .chatbotform {
-	width: 100%;
-	border-top: 1px solid #333;
-	height: 80px;
-	display: flex;
-	justify-content: space-between;
-	padding: 15px;
-  }
-  .chatbotwrapper .chatbotform i {
-	margin-left: 15px;
-	align-self: center;
-	margin-bottom: 5px;
-  }
-  .chatbotwrapper.shown {
-	right: 0;
-  }
-  
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  color: #320544;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 3px 3px 3px #cdcdcd;
+  border: 1px solid #333;
+  z-index: 9998;
+  transition: all 0.75s ease;
+}
+
+.chatbotwrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #dadada;
+  height: 100vh;
+  z-index: 9999;
+  width: 30%;
+  border: 1px solid #333;
+  transition: all 0.75s ease;
+}
+.chatbotwrapper .chatbotheader {
+  height: 50px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  font-size: 18px;
+  background: white;
+}
+
+.body {
+  padding: 15px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.chatbotwrapper .body .chatbotdialog, .chatbotwrapper .body .userdialog {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+.chatbotwrapper .body .chatbotdialog i, .chatbotwrapper .body .userdialog i {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.chatbotwrapper .body .chatbotdialog span, .chatbotwrapper .body .user-dialog span {
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  background: white;
+}
+
+.chatbotwrapper .body .userdialog span {
+  width: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background: rgba(0, 0, 255, 0.1);
+}
+.chatbotwrapper .chatbotform {
+  width: 100%;
+  border-top: 1px solid #333;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.chatbotwrapper .chatbotform i {
+  margin-left: 15px;
+  align-self: center;
+  margin-bottom: 5px;
+}
+.chatbotwrapper.shown {
+  right: 0;
+}

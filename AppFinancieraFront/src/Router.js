@@ -37,7 +37,7 @@ const Router = () => (
       exact
     />
     <Route
-      path="/game"
+      path="/gameOne"
       component={Game1}
       exact
     />
@@ -52,7 +52,7 @@ const Router = () => (
       exact
     />
     <Route
-      path="/gameThree"
+      path="/gameFour"
       component={Game4}
       exact
     />
