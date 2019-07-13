@@ -1,8 +1,6 @@
-/* EJEMPLO */
 const express = require('express')
 
 const user = require('../usecases/user')
-const auth = require('../middlewares/auth')
 const router = express.Router()
 
 router.use(express.json())
@@ -29,14 +27,40 @@ router.post('/', async (req, res) => {
   }
 })
 
-router.get('/', auth, async (req, res) => {
+router.post('/auth', async (req, res) => {
   try {
-    const users = await user.getAll()
+    const {
+      password,
+      email
+    } = req.body
+    const token = await user.logIn(email, password)
+    res.json({
+      seccess: true,
+      message: 'inicio de sesion exitoso',
+      payload: {
+        token
+      }
+    })
+  } catch (error) {
+    console.error('error: ', error)
+    res.status = 401
+    res.json({
+      success: false,
+      message: 'credenciales incorrectas',
+      error: error.message
+    })
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleteUser = await user.deleteById(id)
     res.json({
       success: true,
-      message: 'User createds successfully',
+      message: 'Usuario eliminado',
       payload: {
-        users: users
+        deleteUser
       }
     })
   } catch (error) {
@@ -44,100 +68,74 @@ router.get('/', auth, async (req, res) => {
     res.status = 400
     res.json({
       success: false,
-      message: 'cannot get user',
+      message: 'Usuario no eliminado',
       error: error.message
     })
   }
 })
 
-router.get('/:id', auth, async (request, response) => {
+router.put('/:id', async (req, res) => {
   try {
-    const { id } = request.params
+    const { id } = req.params
+    const newUserData = req.body
+    const updateUser = await user.updateById(id, newUserData)
+    res.json({
+      success: true,
+      massege: 'Informacion del usuario actualizada con exito',
+      payload: {
+        updateUser
+      }
+    })
+  } catch (error) {
+    console.error('error: ', error)
+    res.status = 400
+    res.json({
+      success: false,
+      message: 'Error en las actualizacion de la informacion',
+      error: error.message
+    })
+  }
+})
+
+router.get('/', async (req, res) => {
+  try {
+    const users = await user.getAll()
+    res.json({
+      succes: true,
+      message: 'todos los usuarios obtenidos',
+      payload: {
+        users
+      }
+    })
+  } catch (error) {
+    console.error('error: ', error)
+    res.status = 400
+    res.json({
+      success: false,
+      message: 'Error al obtener usuarios',
+      error: error.message
+    })
+  }
+})
+
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
     const foundUser = await user.getById(id)
-    response.json({
+    res.json({
+      message: 'usuario encontrado',
       success: true,
-      message: 'user found',
       payload: {
-        user: foundUser
+        foundUser
       }
     })
   } catch (error) {
-    console.error('error: ', error)
-    response.status = 400
-    response.json({
+    console.log('error: ', error)
+    res.status = 400
+    res.json({
       success: false,
-      message: 'user not found',
-      error: error.message
-    })
-  }
-})
-
-router.delete('/:id', auth, async (request, response) => {
-  try {
-    const { id } = request.params
-    const deleteUser = await user.deleteById(id)
-    response.json({
-      success: true,
-      message: 'user deleted',
-      payload: {
-        user: deleteUser
-      }
-    })
-  } catch (error) {
-    console.error('error: ', error)
-    response.status = 400
-    response.json({
-      success: false,
-      message: 'user not deleted',
-      error: error.message
-    })
-  }
-})
-
-router.put('/:id', auth, async (request, response) => {
-  try {
-    const { id } = request.params
-    const newUserData = request.body
-    const updatedUser = await user.updateById(id, newUserData)
-    response.json({
-      success: true,
-      message: 'user updated',
-      payload: {
-        user: updatedUser
-      }
-    })
-  } catch (error) {
-    console.error('error: ', error)
-    response.status = 400
-    response.json({
-      success: false,
-      message: 'user not updated',
-      error: error.message
-    })
-  }
-})
-
-router.post('/auth', auth, async (request, response) => {
-  try {
-    const {
-      password,
-      email
-    } = request.body
-    const token = await user.logIn(email, password)
-    response.json({
-      success: true,
-      message: 'user log',
-      payload: {
-        token
-      }
-    })
-  } catch (error) {
-    console.error('error: ', error)
-    response.status = 401
-    response.json({
-      success: false,
-      message: 'Wrong user credential',
-      error: error.message
+      message: 'error al encontrar usuario',
+      error: error.massege
     })
   }
 })

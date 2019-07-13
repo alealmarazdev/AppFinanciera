@@ -1,24 +1,21 @@
-/* EJEMPLO */
 const express = require('express')
 
-const usersRouter = require('./routes/users')
-const petsRouter = require('./routes/pets')
+const userRouter= require('./routes/users')
 
-var app = express()
-const port = 8080
+const app= express()
+const port = 8081
 
 app.use(express.json())
-app.use('/users', usersRouter)
-app.use('/pets', petsRouter)
+app.use('/users', userRouter)
 
 app.get('/', (request, response) => {
   response.json({
     success: true,
-    message: 'pet api version 1'
+    message: 'finance'
   })
 })
 
-module.exports = {
-  server: app,
+module.exports={
+  server : app,
   port
 }

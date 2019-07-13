@@ -1,40 +1,40 @@
-const {Schema, model}=require('mongoose');
+const { Schema, model } = require('mongoose')
 
 const themeSchema = new Schema({
-  name:{
-    type:String,
+  name: {
+    type: String,
     minlength: 3,
     maxlength: 50,
     required: true
-    },
+  },
 
-  icon:{
+  icon: {
     type: String,
     required: true
   },
-  
-  description:{
+
+  description: {
     type: String,
     minlength: 10,
     maxlength: 100,
     required: true
-    },
+  },
 
-  expPoints:{
+  expPoints: {
     type: Number,
     required: true
   },
 
-  content:{
+  content: {
     type: String,
     maxlength: 10000
   },
-      
-  video:{
+
+  video: {
     type: String
   },
 
-  numSerial:{
+  numSerial: {
     type: Number,
     required: true,
     default: true
@@ -42,7 +42,7 @@ const themeSchema = new Schema({
 
 })
 
-module.exports={
-    Schema: themeSchema,
-    model: model('Themes', themeSchema)
+module.exports = {
+  Schema: themeSchema,
+  model: model('Themes', themeSchema)
 }

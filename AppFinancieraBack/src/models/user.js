@@ -1,39 +1,39 @@
-const {Schema , model} = require ('mongoose');
+const { Schema, model } = require('mongoose')
 
 const userSchema = new Schema({
-  email:{
-    type:String,
+  email: {
+    type: String,
     minlength: 5,
     maxlength: 100,
     required: true
   },
 
-  password:{
+  password: {
     type: String,
-    required: true,
+    required: true
   },
 
-  fullName:{
-    type:String,
+  fullName: {
+    type: String,
     minlength: 10,
     maxlength: 100,
-    required: true   
+    required: true
   },
 
-  userName:{
-    type:String,
+  userName: {
+    type: String,
     minlength: 3,
     maxlength: 50,
     required: true
   },
 
-  age:{
+  age: {
     type: Number,
     min: 15,
     max: 100
   },
 
-  gender:{
+  gender: {
     type: String,
     enum: [
       'male',
@@ -43,45 +43,45 @@ const userSchema = new Schema({
     required: true
   },
 
-  createdAt:{
+  createdAt: {
     type: Date,
     required: true
   },
 
-  isActived:{
+  isActived: {
     type: Boolean,
-    default: true,
+    default: true
   },
 
-  isBloquedForum:{
+  isBloquedForum: {
     type: Boolean,
-    default: false,
+    default: false
   },
 
-  lastLogin:{
+  lastLogin: {
     type: Date
   },
 
-  ocupation:{
+  ocupation: {
     type: String,
     maxlength: 50
   },
 
-  city:{
+  city: {
     type: String,
     maxlength: 50
   },
 
-  score:{
+  score: {
     type: Number,
-    default:0
+    default: 0
   },
 
   isAdmin: {
     type: Boolean,
     default: false
   }
-  
+
 })
 
 module.exports = {

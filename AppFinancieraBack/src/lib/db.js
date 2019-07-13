@@ -1,10 +1,9 @@
-/* EJEMPLO */
 const mongoose = require('mongoose')
 
-const connectionString = 'mongodb+srv://aleochoa:clave@db-pets-uilpa.mongodb.net/test?retryWrites=true&w=majority'
+const connecttionString = 'mongodb+srv://FINANCIE:financie@financie-db-zbljq.mongodb.net/test?retryWrites=true&w=majority'
 
 const connect = () => new Promise((resolve, reject) => {
-  mongoose.connect(connectionString, { userNewUrlParser: true }, (error) => {
+  mongoose.connect(connecttionString, { useNewUrlParser: true }, (error) => {
     if (error) return reject(error)
     resolve()
   })
