@@ -29,7 +29,7 @@ const Router = () => (
       exact
     />
     <Route
-      path="/theme/:number"
+      path="/theme/:id"
       component={Theme}
       exact
     />
