@@ -8,14 +8,14 @@ import ContentWrite from '../components/UIComponents/ContentWrite/index'
 
 const contents = {
   'themeOne': {
-    'title': 'Modelo de negocio',
-    'subtitle':'conoce...',
+    'title': 'Conceptos básicos',
+    'subtitle':'Conoce los elementos fundamentales para aprender de finanzas',
     'content': [<ContentVideo />],
     'direccion':'gameOne'
   },
   'themeTwo': {
     'title': 'Modelo de negocio',
-    'subtitle':'conoce...',
+    'subtitle':'Aprende a desarrollar tu idea de negocio.',
     'content': [<ContentWrite />],
     'direccion':'gameOne'
 

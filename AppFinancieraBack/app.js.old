@@ -1,15 +1,15 @@
-const express = require('express')
-const cfenv = require('cfenv')
-const cors = require('cors')
+var express = require('express')
+var cfenv = require('cfenv')
+var cors = require('cors')
 
-const watson = require('watson-developer-cloud')
+var watson = require('watson-developer-cloud')
 var bodyParser = require('body-parser')
 // app.use(cors({origin:false}));
 // IAM
-var wconvVersionDate = '2018-09-20'
-var wconvWorkSpaceId = '2f65e52d-347a-4d8f-9e27-d3f3283e9146'
-var wconvApikey = 'FUf1yvngoWhzqjHlGT586q-61aXOmI9GxQP8f_H5nkEN'
-var wconvUrl = 'https://gateway.watsonplatform.net/assistant/api'
+var wconv_version_date = '2018-09-20'
+var wconv_workspaceId = 'e4491663-cfea-4965-a8ed-34700aec8e27'
+var wconv_apikey = '50lRdsM4FRKBKvsNFqMM2B4R1eKk2mPu_65GxRg2iD1x'
+var wconv_url = 'https://gateway.watsonplatform.net/assistant/api'
 
 var app = express()
 var appEnv = cfenv.getAppEnv()
@@ -23,7 +23,7 @@ const itemsRoutes = require('./routes/item')
 const userRoutes = require('./routes/user')
 
 // serve the files out of ./public as our main files
-app.use(express.static(`${__dirname} + '/public'`))
+app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.json()) // to support JSON-encoded bodies
 app.use(cors())
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
@@ -45,39 +45,36 @@ app.use(session({
 app.get('/', function (req, res) {
   // IAM
   var assistant = new watson.AssistantV1({
-    iam_apikey: wconvApikey,
-    version: wconvVersionDate,
-    url: wconvUrl
+    iam_apikey: wconv_apikey,
+    version: wconv_version_date,
+    url: wconv_url
   })
 
   var username = req.query.username
 
   assistant.message({
-    workspace_id: wconvWorkSpaceId,
+    workspace_id: wconv_workspaceId,
     input: { 'text': '' },
     context: {
       'USERNAME': username,
       'CANAL': 'WEB'
     }
-  },
-  function (err, response) {
+  }, function (err, response) {
     session.context = response.context
-    let msgOut = ''
-    let additionalText = ''
-    let sysName = 'IBM Watson'
-    let avatar = 'post'
-    let cssClass = 'watson'
-    for (let i = 0; i < response.output.text.length; i++) {
-     ` <section class=\'${post\}'>
-      <header class=\"post-header-watson\">
-      <img width='48' height='48' alt='img' class='' + ${avatar} + '-avatar-w' src='images/avatar-' + ${cssClass} + '.png'>
-      <h2 class='post-title-' + ${cssClass} + ''>@' + ${sysName} + '</h2>'
-      </header>
-      <div class=\"post-description-' + ${cssClass} + '">'
-      ${response.output.text[i]}
-     ${additionalText}
-      </div>
-     </section>`
+    var msgOut = ''
+    var additionalText = ''
+    var sys_name = 'IBM Watson'; var avatar = 'post'; var cssClass = 'watson'
+    for (var i = 0; i < response.output.text.length; i++) {
+      msgOut += '<section class="post">'
+      msgOut += '<header class="post-header-watson">'
+      msgOut += '<img width="48" height="48" alt="img" class="' + avatar + '-avatar-w" src="images/avatar-' + cssClass + '.png">'
+      msgOut += '<h2 class="post-title-' + cssClass + '">@' + sys_name + '</h2>'
+      msgOut += '</header>'
+      msgOut += '<div class="post-description-' + cssClass + '">'
+      msgOut += response.output.text[i]
+      msgOut += additionalText
+      msgOut += '</div>'
+      msgOut += '</section>'
     }
     res.send(msgOut)
   })
@@ -85,24 +82,24 @@ app.get('/', function (req, res) {
 
 app.get('/sendMessage', function (req, res) {
   var message = req.query.message
-  var savedContext = session.context
+  var saved_context = session.context
   var username = req.query.username
 
   // IAM
   var assistant = new watson.AssistantV1({
-    iam_apikey: wconvApikey,
-    version: wconvVersionDate,
-    url: wconvUrl
+    iam_apikey: wconv_apikey,
+    version: wconv_version_date,
+    url: wconv_url
   })
 
   // IAM
   assistant.message({
-    workspace_id: wconvWorkSpaceId,
+    workspace_id: wconv_workspaceId,
     input: { 'text': message },
-    context: savedContext
-  },
-  function (err, response) {
+    context: saved_context
+  }, function (err, response) {
     session.context = response.context
+
     var additionalText = ''
     if (response.context.BANDERA_UBICACION !== undefined) {
       var additionalText = '<br><iframe ' +
@@ -123,6 +120,7 @@ app.get('/sendMessage', function (req, res) {
         response.context.PRENDA = response.input.text.substr(index_Start, indext_End - index_Start)
         response.context.PROMOCIONES = datos_api.promociones
         response.context.PROMOCIONES_OK = 'true'
+
         assistant.message({
           workspace_id: wconv_workspaceId,
           input: { 'text': message },
@@ -141,22 +139,23 @@ app.get('/sendMessage', function (req, res) {
 })
 
 function callback (res, username, message, watsonresponse, additionalText) {
-  let msgOut = 
-  `<div class ='chatbot-dialog'>
-      <i class='fas fa-user' aria-hidden='true'></i>
-      <span id='divPosts'>
+  let msgOut = `
+    <div class="chatbot-dialog">
+      <i class="fas fa-user" aria-hidden="true"></i>
+      <span id="divPosts">
         ${message}
       </span>
     </div>
 
-    <div class='chatbot-dialog'>
-      <i class='fas fa-robot' aria-hidden='true'></i>
-      <span id='divPosts'>
+    <div class="chatbot-dialog">
+      <i class="fas fa-robot" aria-hidden="true"></i>
+      <span id="divPosts">
         ${watsonresponse.output.text.join('<br>')}
         ${additionalText}
       </span>
     </div>
   `
+
   res.send(msgOut)
 }
 

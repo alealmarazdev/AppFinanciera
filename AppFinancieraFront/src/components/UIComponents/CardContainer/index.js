@@ -9,8 +9,8 @@ function CardContainer () {
      <div >
        <div class="row m-5">
           
-           <Card to="/theme/themeOne" title="BLOG Y RECURSOS" subtitle="¡Comparte con la comunidad y lee articulos de interes!" />
-           <Card to="/theme/themeTwo" title="BLOG Y RECURSOS" subtitle="¡Comparte con la comunidad y lee articulos de interes!" />
+           <Card to="/theme/themeOne" title='Conceptos básicos' subtitle="Conoce los elementos fundamentales para aprender de finanzas" />    
+           <Card to="/theme/themeTwo" title='Modelo de negocio' subtitle='Aprende a desarrollar tu idea de negocio.' />S
         </div>
         
      </div>
