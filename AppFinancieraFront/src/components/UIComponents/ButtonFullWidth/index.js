@@ -7,7 +7,7 @@ function ButtonFullWidth (props) {
     Title,
   } = props;
   return (
-    <button className= {`${styles.btn} mt-5 btn btn-lg btn-block button`}>{Title}</button>
+    <button className= {`${styles.btn} mt-2 btn btn-small button`}>{Title}</button>
   )
 }
 export default ButtonFullWidth;

@@ -13,7 +13,7 @@ function Card (props) {
         image
     } = props;
     return (
-    <div class="col-sm-3 mb-5 ">
+   
         <div class={`card border border-light ${styles.borderCard}`}>
             <div class="card-body ">
                 <Link to={to} className="d-flex align-items-center flex-column">  
@@ -23,7 +23,7 @@ function Card (props) {
                 </Link>
             </div>
         </div>
-    </div>
+    
    )
 }
 

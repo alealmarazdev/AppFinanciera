@@ -11,15 +11,15 @@ function TitleLanding(props) {
   return (
     <div>
       <div>
-         <h1 className= "text-left">
+         <h1 className= "text-center">
           { titleBig }
         </h1>
-        <h2 className={`${styles.title} text-left `}>
+        <h3 className={`${styles.title} text-center `}>
           {titleMed}
-        </h2>
-        <h3 className={`${styles.text} text-left`}>
+        </h3>
+        <h5 className={`${styles.text} text-center`}>
           { text }
-        </h3>      
+        </h5>      
       </div>
     </div>
   )
