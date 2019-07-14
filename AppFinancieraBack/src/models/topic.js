@@ -1,4 +1,4 @@
-const {Schema, model}=require('mongoose');
+const { Schema, model } = require('mongoose')
 
 const topicSchema = new Schema({
   name: {
@@ -8,25 +8,25 @@ const topicSchema = new Schema({
     required: true
   },
 
-  icon:{
+  icon: {
     type: String,
     required: true
   },
-      
-  description:{
+
+  description: {
     type: String,
     minlength: 10,
     maxlength: 50000,
     required: true
   },
-  
+
   requeriments: {
     type: Array,
     default: []
   }
 })
 
-module.exports= {
+module.exports = {
   Schema: topicSchema,
   model: model('Topics', topicSchema)
 }

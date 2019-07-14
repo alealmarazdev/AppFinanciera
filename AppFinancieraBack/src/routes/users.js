@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     const newUser = await user.signUp(newUserData)
     res.json({
       success: true,
-      message: 'User createds successfully',
+      message: 'usuario creado exitosamente',
       payload: {
         user: newUser
       }
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     res.status = 400
     res.json({
       success: false,
-      message: 'cannot create user',
+      message: 'Usuario no creado',
       error: error.message
     })
   }
