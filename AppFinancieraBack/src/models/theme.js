@@ -38,6 +38,11 @@ const themeSchema = new Schema({
     type: Number,
     required: true,
     default: true
+  },
+
+  topic: {
+    type: String,
+    default: 'general'
   }
 
 })

@@ -31,7 +31,6 @@ const getAll = async () => {
 
 const getById = async (topicId) => {
   const foundTopic = await Topic.findById(topicId).lean()
-  console.log(foundTopic)
   return foundTopic
 }
 
