@@ -12,7 +12,7 @@ import Crown from '../../asset/image/Icons/crown.svg'
 
 import styles from './index.module.css'
 
-function ThemeWordOne () {
+function ThemeWordTwo () {
      return (
       <div >
         <Navbar />
@@ -63,4 +63,4 @@ function ThemeWordOne () {
     )
 }
 
-export default ThemeWordOne;
+export default ThemeWordTwo;

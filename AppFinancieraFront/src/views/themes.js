@@ -20,6 +20,13 @@ const contents = {
     'direccion':'gameOne'
 
   },
+  'themeThree': {
+    'title': 'Administra tu dinero',
+    'subtitle':'Aprende a desarrollar tu idea de negocio.',
+    'content': [<ContentWrite />],
+    'direccion':'gameOne'
+
+  },
 };
 
 function Theme (props) {

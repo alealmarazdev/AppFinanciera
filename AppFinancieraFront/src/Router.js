@@ -6,6 +6,18 @@ import Index from './views/index';
 import Content from './views/content'
 
 import ThemeWordOne from './views/themeWordOne/index'
+import ThemeWordTwo from './views/themeWordTwo/index'
+import ThemeWordThree from './views/themeWordThree/index'
+import ThemeWordFour from './views/themeWordFour/index'
+import ThemeWordFive from './views/themeWordFive/index'
+import ThemeWordSix from './views/themeWordSix/index'
+import ThemeWordSeven from './views/themeWordSeven/index'
+import ThemeWordEight from './views/themeWordEight/index'
+import ThemeWordNine from './views/themeWordNine/index'
+import ThemeWordTen from './views/themeWordTen/index'
+import ThemeWordEleven from './views/themeWordEleven/index'
+import ThemeWordTwelve from './views/themeWordTwelve/index'
+
 import Theme from './views/themes';
 import Game1 from './views/game1'
 import Game2 from './views/game2'
@@ -21,7 +33,7 @@ const Router = () => (
       exact
     />
      <Route
-      path="/theme"
+      path="/curso"
       component={Content}
       exact
     />
@@ -29,6 +41,61 @@ const Router = () => (
      <Route
       path="/theme/Word/One"
       component={ThemeWordOne}
+      exact
+    />
+    <Route
+      path="/theme/Word/Two"
+      component={ThemeWordTwo}
+      exact
+    />
+    <Route
+      path="/theme/Word/Three"
+      component={ThemeWordThree}
+      exact
+    />
+    <Route
+      path="/theme/Word/Four"
+      component={ThemeWordFour}
+      exact
+    />
+    <Route
+      path="/theme/Word/Five"
+      component={ThemeWordFive}
+      exact
+    />
+    <Route
+      path="/theme/Word/Six"
+      component={ThemeWordSix}
+      exact
+    />
+    <Route
+      path="/theme/Word/Seven"
+      component={ThemeWordSeven}
+      exact
+    />
+    <Route
+      path="/theme/Word/Eight"
+      component={ThemeWordEight}
+      exact
+    />
+    <Route
+      path="/theme/Word/Nine"
+      component={ThemeWordNine}
+      exact
+    />
+    <Route
+      path="/theme/Word/Ten"
+      component={ThemeWordTen}
+      exact
+    />
+    <Route
+      path="/theme/Word/Eleven"
+      component={ThemeWordEleven}
+      exact
+    />
+    <Route
+      path="/theme/Word/Twelve"
+      component={ThemeWordTwelve}
       exact
     />
     <Route

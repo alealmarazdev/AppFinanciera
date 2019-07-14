@@ -4,7 +4,7 @@
  height: 50vh;
  position: absolute;
  left: 32vw;
- top: 45vh;
+ top: 54vh;
  background-repeat: no-repeat;
  background-size: inherit;
 
@@ -12,7 +12,7 @@
  
 .mapeado {
     position: absolute;
-    top: 33vh;
+    top: 42vh;
     left: 47vw;
     display: flex;
     flex-direction: column
@@ -26,7 +26,7 @@
 
 .mapeado1 {
     position: absolute;
-    top: 57vh;
+    top: 66vh;
     left: 22vw;
     display: flex;
     flex-direction: column
@@ -40,7 +40,7 @@
 
 .mapeado2 {
     position: absolute;
-    top: 80vh;
+    top: 90vh;
     left: 55vw;
     display: flex;
     flex-direction: column
@@ -58,18 +58,32 @@
     height: 50vh;
     position: absolute;
     left: 28vw;
-    top: 95vh;
+    top: 105vh;
     background-repeat: no-repeat
 }
 
 .mapeado3 {
     position: absolute;
-    top: 105vh;
+    top: 115vh;
     left: 24vw;
     display: flex;
     flex-direction: column
 }
 .mapeado3 img{
+    width:100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapeado4 {
+    position: absolute;
+    top: 138vh;
+    left: 55vw;
+    display: flex;
+    flex-direction: column
+}
+.mapeado4 img{
     width:100px;
     height: 100px;
     margin-left: auto;

@@ -15,8 +15,8 @@ function Index() {
         <div className="row d-flex">
           <div className="col-6">
             <LogoSpace />
-            <TitleLanding className="mt-5" titleBig="Aprende finanzas" titleMed="de la forma más divertida." text="Domina los conceptos básicos, adminístrate, invierte o lleva las finanzas de tu proprio negocio"/>
-            <ButtonFullWidth Title= "COMIENZA AHORA"/>
+            <TitleLanding className="mt-5" titleBig="Aprende finanzas" titleMed="de la forma más divertida." text="Domina los conceptos básicos, administrate, invierte o lleva las finanzas de tu propio negocio"/>
+            <ButtonFullWidth Title= "COMIENZA AHORA" To="/curso"/>
           </div>
           <div className="col-6 text-right">
             <ButtonMed Title="Log-In"/>
