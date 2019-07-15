@@ -24,6 +24,10 @@ function Chatbot() {
 
   async function handleSubmit(ev) {
     ev.preventDefault()
+    if (!state.question) {
+      return;
+    }
+
     sound.play();
 
     const apiUrl = `https://hack-store-smart-sable.mybluemix.net/sendMessage?message=${state.question}`
@@ -65,13 +69,15 @@ function Chatbot() {
 
 
           <div className={styles.chatbotform}>
-            <form onSubmit={`${handleSubmit} d-flex
-            `}>
+            <form onSubmit={handleSubmit} className="d-flex">
               <input type="text" className={styles.formcontrol} placeholder="Pregúntame algo"
                 onChange={handleInput}
                 value={state.question}
               />
-              <img src={Send} alt="enviar" className={styles.send} />
+
+              <button className={styles.send}>
+                <img src={Send} alt="enviar" />
+              </button>
             </form>
           </div>
         </div>
