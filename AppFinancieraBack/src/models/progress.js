@@ -1,24 +1,24 @@
-const {Schema, model}= require('mongoose');
+const { Schema, model } = require('mongoose')
 
-const progressSchema= new Schema ({
-  idUser:{
+const progressSchema = new Schema({
+  idUser: {
     type: String,
-    required: true,
+    required: true
   },
 
-  idTopic:{
+  idTopic: {
     type: String,
-    required: true,
+    required: true
   },
 
-  idTheme:{
+  idTheme: {
     type: String,
-    required: true,
+    required: true
   }
-  
+
 })
 
-module.exports={
+module.exports = {
   Schema: progressSchema,
   model: model('Progress', progressSchema)
 }
