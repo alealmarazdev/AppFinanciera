@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 
 import styles from './index.module.css';
 
-
-
 function Modal({isOpen = false, title = '', children, buttons = null, onClose}) {
   const [open, setOpen] = useState(isOpen)
 
@@ -14,10 +12,10 @@ function Modal({isOpen = false, title = '', children, buttons = null, onClose}) 
   return (
     open ? (
       <React.Fragment>
-        <div className={`modal fade show ${styles.modalMod}`} tabindex="-1" role="dialog" aria-modal="true">
+        <div className={`modal fade show  ${styles.modalMod}`} tabindex="-1" role="dialog" aria-modal="true">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
-              <div className="modal-header">
+              <div className={`modal-header d-flex justify-content-center ${styles.modalHead}`}>
                 <h5 className="modal-title" id="exampleModalLiveLabel">
                   {title}
                 </h5>
@@ -28,7 +26,7 @@ function Modal({isOpen = false, title = '', children, buttons = null, onClose}) 
                   }}>×</span>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body pb-0">
                 {children}
               </div>
               {buttons && <div className="modal-footer">{buttons}</div>}
