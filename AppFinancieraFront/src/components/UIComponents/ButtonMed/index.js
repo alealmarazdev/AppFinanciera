@@ -8,6 +8,7 @@ function ButtonMed (props) {
   } = props;
   return (
     <button className= {`${styles.btn} mt-4 btn btn-light btn-lg`}>{Title}</button>
+    
   )
 }
 export default ButtonMed;

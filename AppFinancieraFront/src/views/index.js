@@ -32,7 +32,7 @@ function Index() {
         <Info />
         <CardContainerNoImage />
         <MarkContainer />
-        <div class="row m-5">        
+        <div class="row p-0 my-5">        
           <div class="col-sm-6 mb-5 ">
               <Card to="/theme/Word/One" title='Conceptos básicos' subtitle="Conoce los elementos fundamentales para aprender de finanzas" image={Profile}/>    
           </div> 
