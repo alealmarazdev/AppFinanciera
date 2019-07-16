@@ -34,7 +34,7 @@ router.put('/:id', async (req, res) => {
     const updateTopic = await topic.updateById(id, newTopicData)
     res.json({
       success: true,
-      massege: 'Informacion del topico actualizada con exito',
+      message: 'Informacion del topico actualizada con exito',
       payload: {
         updateTopic
       }
@@ -110,7 +110,7 @@ router.get('/:id', async (req, res) => {
     res.json({
       success: false,
       message: 'error al encontrar topico',
-      error: error.massege
+      error: error.message
     })
   }
 })

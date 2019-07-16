@@ -2,7 +2,10 @@ const user = require('../usecases/user')
 
 const auth = (req, res, next) => {
   try {
-    console.log(req.headers)
+    const { authorization } = req.headers
+    const jwtDecoded = user.verifyJwt(authorization)
+    console.log('jwt: ', jwtDecoded)
+    next()
   } catch (error) {
     res.status(401)
     res.json({
