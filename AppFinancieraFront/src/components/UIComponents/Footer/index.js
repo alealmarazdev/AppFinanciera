@@ -52,9 +52,9 @@ function Footer() {
         </div>
       </div>
 
-      <div className={`card-footer text-muted d-flex justify-content-between ${styles.bootomFooter}`}>
-        <div className={`text-light`}>Equipo Dinamita</div>
-        <div>
+      <div className={`row card-footer text-muted d-flex justify-content-between ${styles.bootomFooter}`}>
+        <div className={`col-12 col-md-6 text-light`}>Equipo Dinamita</div>
+        <div className="col-12 col-md-6">
           <img src={Instagram} alt='instagram' className={`${styles.socialICon} mx-5`} />
           <img src={Twitter} alt='twitter' className={`${styles.socialICon} mx-5`} />
           <img src={Fb} alt='facebook' className={`${styles.socialICon} mx-5`} />
