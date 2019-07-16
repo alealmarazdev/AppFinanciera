@@ -2,6 +2,7 @@ const express = require('express')
 
 const user = require('../usecases/user')
 const router = express.Router()
+const auth = require('../middlewares/auth')
 
 router.use(express.json())
 
@@ -27,7 +28,7 @@ router.post('/', async (req, res) => {
   }
 })
 
-router.post('/auth', async (req, res) => {
+router.post('/auth', auth, async (req, res) => {
   try {
     const {
       password,
@@ -52,7 +53,7 @@ router.post('/auth', async (req, res) => {
   }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
   try {
     const { id } = req.params
     const deleteUser = await user.deleteById(id)
@@ -74,7 +75,7 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
   try {
     const { id } = req.params
     const newUserData = req.body
@@ -97,7 +98,7 @@ router.put('/:id', async (req, res) => {
   }
 })
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     const users = await user.getAll()
     res.json({
@@ -118,7 +119,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
   try {
     const { id } = req.params
     const foundUser = await user.getById(id)
