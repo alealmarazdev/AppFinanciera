@@ -20,7 +20,7 @@ function Footer() {
     setUserInfo({ userName: '', password: '' })
   }
   return (
-    <div className={`card text-center ${styles.footer}`}>
+    <div className={`card text-center mt-5 ${styles.footer}`}>
       {/* <div class="card-header">
         Featured
       </div> */}

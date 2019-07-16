@@ -6,6 +6,7 @@ import ButtonFullWidth from '../components/UIComponents/ButtonFullWidth'
 import Navbar from '../components/UIComponents/Navbar'
 import Modal from '../components/UIComponents/Modal'
 import Chatbot from '../components/UIComponents/Chatbot'
+import Footer from '../components/UIComponents/Footer' 
 
 import construirBaraja from '../utils/ConstruirBaraja';
 
@@ -107,6 +108,7 @@ class Game1 extends Component {
           numeroDeIntentos={this.state.numeroDeIntentos}
           resetearPartida={() => this.resetearPartida()}
         />
+        <Footer/>
 
         <Modal isOpen={this.state.showModal} title='Ganaste' buttons={buttons} onClose={this.closeModal}>
           {`Ganaste en ${this.state.numeroDeIntentos} intentos!`}

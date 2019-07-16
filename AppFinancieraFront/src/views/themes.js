@@ -5,7 +5,7 @@ import Navbar from '../components/UIComponents/Navbar'
 import Chatbot from '../components/UIComponents/Chatbot'
 import ContentVideo from '../components/UIComponents/ContentVideo/index'
 import ContentWrite from '../components/UIComponents/ContentWrite/index'
-
+import Footer from '../components/UIComponents/Footer/index'
 const contents = {
   'themeOne': {
     'title': 'Conceptos básicos',
@@ -40,6 +40,7 @@ function Theme (props) {
         <TitleGames title={content.title} subtitle={content.subtitle}/>
            {content.content}
         <Chatbot />
+        <Footer />
         </div>
     )
 }
