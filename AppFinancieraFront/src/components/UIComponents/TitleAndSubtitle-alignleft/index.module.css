@@ -1,0 +1,21 @@
+h1 {
+    font-size: 300%;
+   /*  color:white; */
+color: #3AAE9B ; 
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 200%;
+/*     color:white; */
+  /*   color: black !important; */
+    margin-bottom: 7%;
+}
+
+h5 {
+    font-size: 150%;
+   /*  color:white; */
+ /*    color: black; */
+    font-weight: 400;
+    letter-spacing: 2px;
+}
