@@ -35,7 +35,7 @@ router.post('/auth', async (req, res) => {
     } = req.body
     const token = await user.logIn(email, password)
     res.json({
-      seccess: true,
+      success: true,
       message: 'inicio de sesion exitoso',
       payload: {
         token

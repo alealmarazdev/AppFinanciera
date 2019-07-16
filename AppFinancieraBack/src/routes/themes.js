@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     const newTheme = await theme.newTheme(newThemeData)
     res.json({
       success: true,
-      message: 'topico creado',
+      message: 'tema creado',
       payload: {
         newTheme
       }
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     res.status = 400
     res.json({
       success: false,
-      message: 'topico no creado',
+      message: 'tema no creado',
       error: error.message
     })
   }
@@ -34,7 +34,7 @@ router.put('/:id', async (req, res) => {
     const updateTheme = await theme.updateById(id, newThemeData)
     res.json({
       success: true,
-      massege: 'Informacion del tema actualizada con exito',
+      massage: 'Informacion del tema actualizada con exito',
       payload: {
         updateTheme
       }
@@ -98,7 +98,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params
     const foundTheme = await theme.getById(id)
     res.json({
-      message: 'topico encontrado',
+      message: 'tema encontrado',
       success: true,
       payload: {
         foundTheme
@@ -109,8 +109,8 @@ router.get('/:id', async (req, res) => {
     res.status = 400
     res.json({
       success: false,
-      message: 'error al encontrar topico',
-      error: error.massege
+      message: 'error al encontrar tema',
+      error: error.massage
     })
   }
 })

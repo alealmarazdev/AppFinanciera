@@ -20,7 +20,7 @@ const topicSchema = new Schema({
     required: true
   },
 
-  requeriments: {
+  requirements: {
     type: Array,
     default: []
   }
