@@ -32,18 +32,6 @@ export default{
       console.log(succes)
       return succes
     },
-    async changeTopic(id) {
-      const response = await fetch(`http://localhost:8081/topic/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ isDone: true }),
-      });
-  
-      const { succes } = await response.json();
-      console.log(succes)
-      return succes
-  
-    },
     async newTopic(topicInfo) {
       const response = await fetch('http://localhost:8081/topics', {
         method: 'POST',
@@ -52,7 +40,6 @@ export default{
           name: topicInfo.title,
           description: topicInfo.subtitle,
           icon: topicInfo.img,
-          isCheck: topicInfo.isDone,
         }),
       });
   
@@ -61,7 +48,7 @@ export default{
       return succes
     },
     async getTopic (topicId){
-      const response = await fetch(`http://localhost:8081/pets/${topicId}`);
+      const response = await fetch(`http://localhost:8081/topics/${topicId}`);
   
       const { payload } = await response.json();
   
