@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './index.module.css';
 
-function TitleLanding(props) {
+function TitleCenter(props) {
   const {
     titleBig,
     titleMed,
@@ -11,13 +11,13 @@ function TitleLanding(props) {
   return (
     <div>
       <div>
-         <h1 className= "text-left">
+         <h1 className= "text-center">
           { titleBig }
         </h1>
-        <h3 className={`${styles.title} text-left`}>
+        <h3 className={`${styles.title} text-center`}>
           {titleMed}
         </h3>
-        <h3 className={`${styles.text} text-left`}>
+        <h3 className={`${styles.text} text-center`}>
           { text }
         </h3>      
       </div>
@@ -25,4 +25,4 @@ function TitleLanding(props) {
   )
 }
 
-export default TitleLanding;
+export default TitleCenter;

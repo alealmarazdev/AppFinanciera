@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import Index from './views/index';
+import Index from './views/index/index';
 import Content from './views/content'
 
 import ThemeWordOne from './views/themeWordOne/index'
