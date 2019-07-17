@@ -23,8 +23,8 @@ function Header() {
   return (
     //1st page - log in 
     <div className={`d-flex `}>
-      <div className={`d-flex flex-column`}> 
-          <TitleLanding className="col-sm-5 " titleBig=" ¿Estás listo para hacer realidad tus sueños?" titleMed="Aprende todo lo que necesitas sobre finanzas para emprender un negocio existo de una forma divertida." text="Regístrate y realiza el diágnostico financiero de tu negocio o idea ¡completamente gratis!" />
+      <div className={`d-flex flex-column `}> 
+          <TitleLanding className=" col-sm-5 mt-0" titleBig=" ¿Estás listo para hacer realidad tus sueños?" titleMed="Aprende todo lo que necesitas sobre finanzas para emprender un negocio existo de una forma divertida." text="Regístrate y realiza el diágnostico financiero de tu negocio o idea ¡completamente gratis!" />
           <div className="d-flex justify-content-center"> 
             <ButtonFullWidth  className={`${styles.ButonSize}`}  Title="Jugar ahora!" handleClick={()=>{toggleModal(true)}} />
           </div>
