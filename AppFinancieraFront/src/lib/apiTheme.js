@@ -72,7 +72,19 @@ export default{
   
       const { success } = await response.json();
       return success
-    }
+    },  
+    async doneTheme(id) {
+      const response = await fetch(`http://localhost:8081/themes/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isDone: true }),
+      });
+  
+      const { succes } = await response.json();
+      console.log(succes)
+      return succes
+  
+    },
   
   }
   
