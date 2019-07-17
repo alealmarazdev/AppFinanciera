@@ -1,12 +1,17 @@
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
+const { server, port } = require('./src/server')
 
-var express = require('express');
+
 var cfenv = require('cfenv');
 var cors = require('cors')
 var watson = require('watson-developer-cloud');
 var bodyParser = require('body-parser');
+
+const db = require('./src/lib/db')
+
+
 
 //IAM
 var wconv_version_date = '2018-09-20';
@@ -15,32 +20,32 @@ var wconv_workspaceId = 'e4491663-cfea-4965-a8ed-34700aec8e27'
 var wconv_apikey = '50lRdsM4FRKBKvsNFqMM2B4R1eKk2mPu_65GxRg2iD1x'
 var wconv_url = 'https://gateway.watsonplatform.net/assistant/api'
 
-var app = express();
+
 var appEnv = cfenv.getAppEnv();
 var session = require('express-session');
 
 // serve the files out of ./public as our main files
-app.use(express.static(__dirname + '/public'));
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+/* app.use(express.static(__dirname + '/public')); */
+/* app.use( bodyParser.json() );    */    // to support JSON-encoded bodies
+server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-app.use(cors())
+server.use(cors())
 
-app.set('trust proxy', 1) // trust first proxy 
-app.use(session({
+server.set('trust proxy', 1) // trust first proxy 
+server.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
 }))
 
-app.get('/chat', function (req, res) {
+server.get('/chat', function (req, res) {
     res.sendFile(__dirname + '/public/chatv2.html');
 });
 
-app.get('/initiliaze', function(req, res){
+server.get('/initiliaze', function(req, res){
   
   //IAM
   var assistant = new watson.AssistantV1({
@@ -83,7 +88,7 @@ app.get('/initiliaze', function(req, res){
 
 });
 
-app.get('/sendMessage', function (req, res) {
+server.get('/sendMessage', function (req, res) {
   
   var message = req.query.message;
   var saved_context = session.context;
@@ -181,11 +186,11 @@ function callback(res, username, message, watsonresponse, additionalText){
 }
 
 // start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
+/* app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
-});
+}); */
 
-app.get("/calldatabase", function(req, res){
+server.get("/calldatabase", function(req, res){
   
   var tipo = req.query.tipo
   switch(tipo){
@@ -214,3 +219,16 @@ function compare(a,b) {
     return 1;
   return 0;
 }*/
+
+db.connect()
+  .then(() => {
+    console.log('Base de datos conectada')
+    server.listen(port, () => {
+      console.log('servidor corriedo en el puerto: ', port)
+      
+    })
+    
+  })
+  .catch(error => {
+    console.error('error: ', error)
+  })
