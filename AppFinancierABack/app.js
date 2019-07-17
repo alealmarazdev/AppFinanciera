@@ -4,7 +4,7 @@
 
 var express = require('express');
 var cfenv = require('cfenv');
-
+var cors = require('cors')
 var watson = require('watson-developer-cloud');
 var bodyParser = require('body-parser');
 
@@ -25,6 +25,8 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
+
+app.use(cors())
 
 app.set('trust proxy', 1) // trust first proxy 
 app.use(session({
