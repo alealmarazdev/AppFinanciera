@@ -25,20 +25,14 @@ function Footer() {
         Featured
       </div> */}
       <div className={`row d-flex`}>
-<<<<<<< HEAD
         <div className={`card-body col-12 col-md-3`}>
-=======
-        <div className={`col-12 card-body col-sm-3`}>
->>>>>>> develop
+
           <h5 className={`card-title  ${styles.colorCyan}`}>Suscribete a nuestro Nesletter</h5>
           <p  className={`card-text  ${styles.colorCyan}`}>With supporting text below as a natural lead-in to additional content.</p>
           <ButtonFullWidth class="btn btn-primary" className={`${styles.ButonSize}`} Title="Jugar ahora!" handleClick={() => { toggleModal(true) }} />
         </div>
-<<<<<<< HEAD
         <div className={`card-body col-12 col-md-3`}>
-=======
-        <div className={`col-12 card-body col-sm-3`}>
->>>>>>> develop
+
           <p className={`card-text py-0 my-0 ${styles.colorCyan}`}>CONTACTO.</p>
           <p className={`card-text py-0 my-0  ${styles.colorCyan}`}>SOBRE NOSOTROS.</p>
           <p className={`card-text py-0 my-0  ${styles.colorCyan}`}>APRENDE.</p>
@@ -46,20 +40,13 @@ function Footer() {
           <p className={`card-text py-0 my-0  ${styles.colorCyan}`}>JUEGA.</p>
           <p className={`card-text py-0 my-0 ${styles.colorCyan}`}>FAQ.</p>
         </div>
-<<<<<<< HEAD
         <div className={`card-body col-12 col-md-3`}>
-=======
-        <div className={`col-12 card-body col-sm-3`}>
->>>>>>> develop
         <p class={`card-text py-0 ${styles.colorCyan}`}>POLITICA DE PRIVACIDAD.</p>
           <p class={`card-text py-0 ${styles.colorCyan}`}>TERMINOS Y CONDICIONES.</p>
           <p class={`card-text py-0 ${styles.colorCyan}`}>POLITICA DE DATOS.</p>
         </div>
-<<<<<<< HEAD
         <div className={`card-body col-12 col-md-3`}>
-=======
-        <div className={`col-12 card-body col-sm-3`}>
->>>>>>> develop
+
       
           <p class={`card-text py-0 ${styles.colorCyan}`}>Calle Tonala numero 10</p>
           <p class={`card-text py-0 ${styles.colorCyan}`}>Colonia Roma</p>
@@ -69,11 +56,9 @@ function Footer() {
       </div>
 
       <div className={`row card-footer text-muted d-flex justify-content-between ${styles.bootomFooter}`}>
-<<<<<<< HEAD
+
         <div className={`text-light col-12 col-md-6`}>Equipo Dinamita</div>
-=======
-        <div className={`col-12 col-md-6 text-light`}>Equipo Dinamita</div>
->>>>>>> develop
+
         <div className="col-12 col-md-6">
           <img src={Instagram} alt='instagram' className={`${styles.socialICon} mx-5`} />
           <img src={Twitter} alt='twitter' className={`${styles.socialICon} mx-5`} />
