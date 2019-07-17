@@ -1,6 +1,6 @@
 export default{
   async getUsers() {
-    const response = await fetch('http://localhost:8080/users');
+    const response = await fetch('http://localhost:8081/users');
 
     const { payload } = await response.json();
 
@@ -18,7 +18,7 @@ export default{
  return list
   },
   async deleteUser(id) {
-    const response = await fetch(`http://localhost:8080/users/${id}`, {
+    const response = await fetch(`http://localhost:8081/users/${id}`, {
       method: 'DELETE',
     });
 
@@ -27,7 +27,7 @@ export default{
     return succes
   },
   async isBloquedForum(id) {
-    const response = await fetch(`http://localhost:8080/users/${id}`, {
+    const response = await fetch(`http://localhost:8081/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
@@ -40,7 +40,7 @@ export default{
 
   },
   async newUser(userInfo) {
-    const response = await fetch('http://localhost:8080/users', {
+    const response = await fetch('http://localhost:8081/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -65,7 +65,7 @@ export default{
     return succes
   },
   async getUser (userId){
-    const response = await fetch(`http://localhost:8080/pets/${userId}`);
+    const response = await fetch(`http://localhost:8081/users/${userId}`);
 
     const { payload } = await response.json();
 
@@ -74,7 +74,7 @@ export default{
     return user
   },
   async updateUser(userId, body) {
-    const response = await fetch(`http://localhost:8080/pets/${userId}`, {
+    const response = await fetch(`http://localhost:8081/users/${userId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -82,6 +82,15 @@ export default{
 
     const { succes } = await response.json();
     return succes
+  },
+  async getScore (userId, userScore){
+    const response = await fetch(`http://localhost:8081/users/${userId}/${userScore}`);
+
+    const { payload } = await response.json();
+
+    const { user } = payload;
+
+    return user.score
   }
 
 }

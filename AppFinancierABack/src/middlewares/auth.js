@@ -1,11 +1,8 @@
-/*Ejemplo*/
 const user = require('../usecases/user')
 
 const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers
-    if (!authorization) throw new Error('authorization header not present')
-    console.log('headers: ', authorization)
     const jwtDecoded = user.verifyJwt(authorization)
     console.log('jwt: ', jwtDecoded)
     next()
