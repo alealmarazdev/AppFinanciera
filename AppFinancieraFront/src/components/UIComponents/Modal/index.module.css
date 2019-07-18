@@ -3,10 +3,25 @@
   padding-top: 5rem
 }
 .modalHead{
-  height: 85px;
+  height: 90px;
 }
 .modalHead h5{
   margin-top: 35px;
  /*  margin-left: auto; 
  margin-right: auto; */
 }
+
+.btnPurple {
+  background-color:rgb(126, 69, 175);
+  color: white;
+  font-weight: 900;
+  width: 40%;
+}
+
+ 
+ .btnPurple:hover {
+     background-color:#BF82F4;
+     color: white;
+     font-weight: 900;
+ }
+ 
