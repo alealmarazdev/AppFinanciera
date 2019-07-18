@@ -5,12 +5,11 @@ const { server, port } = require('./src/server')
 
 
 var cfenv = require('cfenv');
-var cors = require('cors')
+
 var watson = require('watson-developer-cloud');
-var bodyParser = require('body-parser');
-
+/* var bodyParser = require('body-parser');
+ */
 const db = require('./src/lib/db')
-
 
 
 //IAM
@@ -24,14 +23,15 @@ var wconv_url = 'https://gateway.watsonplatform.net/assistant/api'
 var appEnv = cfenv.getAppEnv();
 var session = require('express-session');
 
+
 // serve the files out of ./public as our main files
 /* app.use(express.static(__dirname + '/public')); */
 /* app.use( bodyParser.json() );    */    // to support JSON-encoded bodies
-server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+/* server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
+ */
 
-server.use(cors())
 
 server.set('trust proxy', 1) // trust first proxy 
 server.use(session({

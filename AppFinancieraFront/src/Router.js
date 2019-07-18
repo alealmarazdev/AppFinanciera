@@ -23,6 +23,7 @@ import Game1 from './views/game1'
 import Game2 from './views/game2'
 import Game3 from './views/game3'
 import Game4 from './views/game4'
+import Game5 from './views/game5'
 import Blog from './views/blog';
 
 const Router = () => (
@@ -121,6 +122,11 @@ const Router = () => (
     <Route
       path="/gameFour"
       component={Game4}
+      exact
+    />
+     <Route
+      path="/gameFive"
+      component={Game5}
       exact
     />
     <Route
