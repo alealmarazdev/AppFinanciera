@@ -60,16 +60,16 @@ function handleCloseModal (props) {
      <MarkContainer className= "mt-0" />
      <div className= {`${styles.Bgquote} col-12 content-fluid`}></div>
      <CardContainerNoImage />
-     <div class="row p-0 my-5">        
-          <div class="col-sm-6 mb-5 ">
-              <Card to="/theme/Word/One" title='Conceptos básicos' subtitle="Conoce los elementos fundamentales para aprender de finanzas" image={Profile}/>    
+     <div className="row p-0 m-0">        
+          <div className="col-sm-6 mb-5 ">
+              <Card to="/theme/Word/One" title='RETOS DIARIOS' subtitle="PON EN PRÁCTICA TUS CONOCIMIENTOS CON RETOS DIARIOS QUE HARÁN QUE LAS FINANZA SEAN TAN FÁCILES COMO RESPIRAR" image={Profile}/>    
           </div> 
           <div class="col-sm-6 mb-5 ">
-              <Card to="/theme/Word/Two" title='Modelo de negocio' subtitle='Aprende a desarrollar tu idea de negocio.' image={AvatarW}/>
+              <Card to="/theme/Word/Two" title='APRENDE EN CUALQUIER LUGAR' subtitle='USA FISHNANCE EN TU LAPTOP, CELULAR O TABLET DÓNDDE SEA Y A LA HORA QUE QUIERAS.' image={AvatarW}/>
           </div>
         </div>
-        <ImageContainer history={props.history}/>
-        <Footer history={props.history}/>
+         <ImageContainer history={props.history}/>
+        <Footer history={props.history}/> 
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
                   const userName = event.target.value

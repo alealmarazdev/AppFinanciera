@@ -28,7 +28,7 @@ function Navbar(){
           <div className="nav-item py-2">
             <NavbarList userName="Alberto Maturano" themeNumber="2" levelNumber="2"/>
 
-            </div>
+            </div> 
         </div>
       </nav>
 )

@@ -19,11 +19,11 @@ function Footer(props) {
     props.history.push('/curso')
   }
   return (
-    <div className={` card text-center mt-5 ${styles.footer}`}>
+    <div className={` mx-0 card text-center mt-5 ${styles.footer}`}>
       {/* <div class="card-header">
         Featured
       </div> */}
-      <div className={`row d-flex`}>
+      <div className={`row d-flex mx-0`}>
         <div className={`card-body col-12 col-md-3`}>
 
           <h5 className={`card-title  ${styles.colorCyan}`}>Suscribete a nuestro Nesletter</h5>

@@ -11,7 +11,7 @@ function NavbarList(props) {
       levelNumber
     } = props;
     return (
-    <div className={`${styles.usuarioContainer}  d-flex flex-row`}>
+    <div className={`${styles.usuarioContainer}  d-flex flex-row mx-0`}>
         <aside className={`${styles.usuarioRow} d-flex flex-column `}>
             <section className={`${styles.usuarioName} font-weight-bolder`}>
                 {userName}

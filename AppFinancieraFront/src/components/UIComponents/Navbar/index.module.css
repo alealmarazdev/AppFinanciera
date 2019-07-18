@@ -1,3 +1,4 @@
 .navFondo{
-    border-bottom: 5px solid #3AAE98
+    border-bottom: 5px solid #3AAE98;
+    overflow: hidden;
 }

@@ -1,5 +1,6 @@
 .footer{
-    border-top: 10px solid #3aae9b
+    border-top: 10px solid #3aae9b;
+    overflow: hidden;
 }
 
 .bootomFooter{
