@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import apiUser from '../../../lib/apiUser';
 
  import ButtonFullWidth from '../../../components/UIComponents/ButtonFullWidth'; 
 /*  import ButtonMed from '../../../components/UIComponents/ButtonMed'; */
@@ -9,12 +9,13 @@ import Modal from '../../UIComponents/Modal'
 import styles from './index.module.css' 
 import SignInForm from '../../UIComponents/SignInForm/index'
 
-function Header() {
+function Header(props) {
   
   const [showModal, toggleModal] = useState(false)
   const [userInfo, setUserInfo] = useState({userName:'', password:''})
   
-  const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Registrate.</button> ]
+  const buttons = [<button type="button" className="btn btn-danger" onClick={() => {const newUserResponse = apiUser.newUser(userInfo)
+    if(newUserResponse) props.history.push('/'); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Registrate.</button> ]
   
   function handleCloseModal () {
    toggleModal(false); 
