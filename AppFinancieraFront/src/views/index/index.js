@@ -69,7 +69,7 @@ function handleCloseModal (props) {
           </div>
         </div>
          <ImageContainer history={props.history}/>
-        <Footer history={props.history}/> 
+        <Footer history={props.history}/> */}
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
                   const userName = event.target.value
