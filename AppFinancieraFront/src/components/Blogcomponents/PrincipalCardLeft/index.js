@@ -1,20 +1,26 @@
 import React from 'react'
-import JuntaDeNegocio from '../../../asset/image/juntadenegocios.jpg'
-/* import styles from './index.module.css'; */
 
 
 
-function PrincipalCardLeft(){
+
+
+function PrincipalCardLeft(props){
+    const {
+        title,
+        bodyText,
+        lastUpdate,
+        imageSRC,
+    } = props;
 
     return (
     <div className="w-50 mb-1"> 
         <div class="card mb-3">
-            <img src={JuntaDeNegocio} class="card-img-top" alt="..."/>
+            <img src={imageSRC} class="card-img-top" alt="..."/>
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{title}</h5>
+                <p class="card-text">{bodyText}</p>
                 <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">{lastUpdate}</small>
                 </p>
             </div>
       </div>

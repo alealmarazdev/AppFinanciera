@@ -10,15 +10,32 @@
     background-size: cover;
 }
 
-.Bgquote {
-    background-image: url('../../asset/image/Background/Quoteimage.svg');
+.BgquoteBg1 {
+    background-image: url('../../asset/image/Background/moneyquoteBg.svg');
     overflow: hidden;
-    width: 100%;
-    background-size: cover;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.Buttonmed {
-    margin-left:75%
+.Bgquote {
+    background-image: url('../../asset/image/Background/Quote.svg');
+    overflow: hidden;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.BgquoteBg2 {
+    background-image: url('../../asset/image/Background/FishquoteBg.svg');
+    overflow: hidden;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.buttonstart {
+    margin-right: 15%;
 }
 
 .girl{
@@ -66,4 +83,23 @@
         }
     
     }
+
+@media only screen and (min-width: 768px) {
+
+    .Buttonmed {
+        margin-left:75%
+    }
+
+    .bgimage {
+        background-image: url('../../asset/image/Background/fishBG.svg');
+        overflow: hidden;
+        width: 100%;
+        background-size: cover;
+    }
+
+    
+
+  
+    }
+
   
