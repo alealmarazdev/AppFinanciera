@@ -6,7 +6,7 @@ const themeRouter = require('./routes/themes')
 const progressRouter = require('./routes/progresses')
 
 const app = express()
-const port = 8081
+const port = process.env.PORT || 8081
 
 app.use(express.json())
 app.use('/users', userRouter)
