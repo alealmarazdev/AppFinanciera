@@ -24,17 +24,18 @@ import AvatarW from '../../asset/image/avatarW.png'
 
 
 
-function Index() {
+function Index(props) {
 
 const [showModal, toggleModal] = useState(false)
 const [userInfo, setUserInfo] = useState({userName:'', password:''})
 
 const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Iniciar sesion.</button> ]
 
-function handleCloseModal () {
+function handleCloseModal (props) {
  toggleModal(false); 
  setUserInfo({userName:'', password:''})
 }
+
 
   return (
     //1st page - log in 
@@ -67,8 +68,8 @@ function handleCloseModal () {
               <Card to="/theme/Word/Two" title='Modelo de negocio' subtitle='Aprende a desarrollar tu idea de negocio.' image={AvatarW}/>
           </div>
         </div>
-        <ImageContainer />
-        <Footer/>
+        <ImageContainer history={props.history}/>
+        <Footer history={props.history}/>
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
                   const userName = event.target.value
