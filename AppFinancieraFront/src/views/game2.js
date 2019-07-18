@@ -7,7 +7,7 @@ import QuestionGame from '../components/QuestionGame/index'
 import Modal from '../components/UIComponents/Modal'
 import ButtonMed from '../components/UIComponents/ButtonMed'
 
-function Content () {
+function Game2 () {
  
 const [showModal, toggleModal] = useState(false)
 const [userInfo, setUserInfo] = useState({userName:'', password:''})
@@ -59,4 +59,4 @@ function handleCloseModal () {
     )
 }
 
-export default Content;
+export default Game2;
