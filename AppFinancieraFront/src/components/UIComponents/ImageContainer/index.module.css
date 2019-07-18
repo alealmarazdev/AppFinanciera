@@ -1,5 +1,4 @@
 .bienvenida {
-
     width: 100%;
     height: 90vh;
     position: relative;
@@ -8,7 +7,9 @@
     align-items: center;
     background: linear-gradient(#3AAE98,#BF82F4);
      background-image: url('../../../asset/image/estrellas.png'),linear-gradient(#3AAE98,#BF82F4); 
-}
+     box-sizing: border-box;
+     overflow: hidden;
+    }
 .estrellaFugaz {
 
     width: 100px;
@@ -19,6 +20,7 @@
     -webkit-animation: estrella 4s infinite;
     -moz-animation: estrella 4s infinite;
     animation: estrella 4s infinite;
+    box-sizing: border-box;
 
 }
 

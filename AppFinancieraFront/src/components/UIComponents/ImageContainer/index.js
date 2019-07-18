@@ -9,9 +9,9 @@ import styles from './index.module.css'
 
 function ImageContainer() {
   const [showModal, toggleModal] = useState(false)
-  const [userInfo, setUserInfo] = useState({userName:'', password:''})
-  
+  const [userInfo, setUserInfo] = useState({userName:'', password:''})  
   const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Registrate.</button> ]
+  
   
   function handleCloseModal () {
    toggleModal(false); 
@@ -25,7 +25,7 @@ function ImageContainer() {
         <div className="d-flex flex-column "> 
             <h6 className={`text-center`}>Unete a nuestra comunidad y domina las finanzas</h6>
             <div className="d-flex justify-content-center"> 
-            <ButtonFullWidth  className={`${styles.ButonSize} `}  Title="¡Comienza ahora!" handleClick={()=>{toggleModal(true)}}/>
+            <ButtonFullWidth  className={`${styles.ButonSize} `}  Title="COMIENZA AHORA" handleClick={()=>{toggleModal(true)}}/>
             </div>
         </div>
         <Modal isOpen={showModal} title='Registrate.' buttons={buttons} onClose={handleCloseModal}>

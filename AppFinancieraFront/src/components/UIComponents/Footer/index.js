@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import apiUser from '../../../lib/apiUser';
+
 /* import {Link} from 'react-router-dom' */
 import SignInForm from '../../UIComponents/SignInForm/index'
 import Modal from '../../UIComponents/Modal'
@@ -9,22 +11,19 @@ import Fb from '../../../asset/image/fb.svg'
 
 import styles from './index.module.css'
 
-function Footer() {
+function Footer(props) {
   const [showModal, toggleModal] = useState(false)
-  const [userInfo, setUserInfo] = useState({ userName: '', password: '' })
-
-  const buttons = [<button type="button" className="btn btn-danger" onClick={() => { console.log(userInfo); handleCloseModal() }}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => { console.log(userInfo); handleCloseModal() }}>Registrate.</button>]
-
-  function handleCloseModal() {
-    toggleModal(false);
-    setUserInfo({ userName: '', password: '' })
+  
+  function handleUserInfo (userInfo) {
+    apiUser.newUser({...userInfo})
+    props.history.push('/curso')
   }
   return (
-    <div className={` card text-center mt-5 ${styles.footer}`}>
+    <div className={` mx-0 card text-center mt-5 ${styles.footer}`}>
       {/* <div class="card-header">
         Featured
       </div> */}
-      <div className={`row d-flex`}>
+      <div className={`row d-flex mx-0`}>
         <div className={`card-body col-12 col-md-3`}>
 
           <h5 className={`card-title  ${styles.colorCyan}`}>Suscribete a nuestro Nesletter</h5>
@@ -67,14 +66,8 @@ function Footer() {
 
 
       </div>
-      <Modal isOpen={showModal} title='Registrate.' buttons={buttons} onClose={handleCloseModal}>
-        <SignInForm valueEmail={userInfo.userName} onChangeEmail={(event) => {
-          const userName = event.target.value
-          setUserInfo({ ...userInfo, userName })
-        }} valuePassword={userInfo.password} onChangePassword={(event) => {
-          const password = event.target.value
-          setUserInfo({ ...userInfo, password })
-        }} />
+      <Modal isOpen={showModal} title='Registrate.' >
+        <SignInForm handleUserInfo={handleUserInfo} handleCloseModal={()=>{toggleModal(false)}}/>
       </Modal>
     </div>
   )

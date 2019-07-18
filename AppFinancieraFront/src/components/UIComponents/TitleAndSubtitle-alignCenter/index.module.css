@@ -2,6 +2,7 @@ h1 {
     font-size: 230%;
     font-weight: bold;
     color: black; 
+    padding-right: 0;
 }
 
 h3 {
