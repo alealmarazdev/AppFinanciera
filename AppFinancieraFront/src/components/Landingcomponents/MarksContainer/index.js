@@ -1,20 +1,16 @@
 import React from 'react';
 
-import Profile from '../../../asset/image/profile.svg'
-import AvatarW from '../../../asset/image/avatarW.png'
+import IBMlogo from '../../../asset/image/Logos/IBM.png';
+import KodemiaLogo from '../../../asset/image/Logos/Kodemia.png'
 
 import styles from '../MarksContainer/index.module.css'
 
 function MarkContainer () {
     return (
   
-       <div className={`${styles.color}  my-2 px-5 d-flex justify-content-around  align-items-center`}>
-          <img src={Profile} className=" " alt="marcas compañantes"/>
-          <img src={AvatarW} className="" alt="marcas compañantes"/>
-          <img src={Profile} className="" alt="marcas compañantes"/>
-          <img src={AvatarW} className="" alt="marcas compañantes"/>
-          <img src={Profile} className="" alt="marcas compañantes"/>
-           
+       <div className={`${styles.color}  d-flex justify-content-around  align-items-center`}>
+          <img src={KodemiaLogo} className="" alt="Logo Kodemia"/>
+          <img src={IBMlogo} className="" alt="Logo IBM"/>
         </div>
         
   
