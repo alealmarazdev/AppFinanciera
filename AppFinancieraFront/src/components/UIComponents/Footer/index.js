@@ -13,11 +13,12 @@ import styles from './index.module.css'
 
 function Footer(props) {
   const [showModal, toggleModal] = useState(false)
-  
+
   function handleUserInfo (userInfo) {
     apiUser.newUser({...userInfo})
     props.history.push('/curso')
-  }
+}
+  
   return (
     <div className={` mx-0 card text-center mt-5 ${styles.footer}`}>
       {/* <div class="card-header">
@@ -67,7 +68,7 @@ function Footer(props) {
 
       </div>
       <Modal isOpen={showModal} title='Registrate.' >
-        <SignInForm handleUserInfo={handleUserInfo} handleCloseModal={()=>{toggleModal(false)}}/>
+        <SignInForm  handleUserInfo={handleUserInfo} handleCloseModal={()=>{toggleModal(false)}}/>
       </Modal>
     </div>
   )
