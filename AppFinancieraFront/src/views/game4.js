@@ -6,7 +6,7 @@ import Chatbot from '../components/UIComponents/Chatbot'
 import TransportGame from '../components/TransportGame/index'
 
 
-function Content () {
+function Game4 () {
  
      return (
       <div >
@@ -19,4 +19,4 @@ function Content () {
     )
 }
 
-export default Content;
+export default Game4;

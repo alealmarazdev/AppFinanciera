@@ -1,15 +1,17 @@
  .bgGame{
  background-image: url('../../asset/image/Background/bg-img_top.svg');
- width: 100vw;
+ width: 45vw;
  height: 50vh;
  position: absolute;
- left: 32vw;
+ left: 32%;
  top: 54vh;
  background-repeat: no-repeat;
  background-size: inherit;
+ overflow: hidden; 
+
 
 }
- 
+
 .mapeado {
     position: absolute;
     top: 42vh;
@@ -20,8 +22,7 @@
  .mapeado img{
     width:100px;
     height: 100px;
-    margin-left: auto;
-    margin-right: auto;
+  
 }
 
 .mapeado1 {
@@ -54,7 +55,7 @@
 
 .bgContinue{
     background-image: url('../../asset/image/Background/bg-img_repeat.svg');
-    width: 100vw;
+    width: 45vw;
     height: 50vh;
     position: absolute;
     left: 28vw;
@@ -88,4 +89,4 @@
     height: 100px;
     margin-left: auto;
     margin-right: auto;
-}
+} 

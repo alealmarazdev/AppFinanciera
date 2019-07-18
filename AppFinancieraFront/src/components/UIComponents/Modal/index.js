@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import styles from './index.module.css';
 
-function Modal({isOpen = false, title = '', children, buttons = null, onClose}) {
+function Modal({isOpen = false, title = '', children, buttons = null, onClose= null}) {
   const [open, setOpen] = useState(isOpen)
 
   useEffect(() => {
@@ -19,12 +19,12 @@ function Modal({isOpen = false, title = '', children, buttons = null, onClose}) 
                 <h5 className="modal-title" id="exampleModalLiveLabel">
                   {title}
                 </h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                {onClose && (<button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true" onClick={() => {
                     setOpen(false);
                     onClose();
                   }}>×</span>
-                </button>
+                </button>)}
               </div>
               <div className="modal-body pb-0">
                 {children}

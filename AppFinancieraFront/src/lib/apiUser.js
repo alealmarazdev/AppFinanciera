@@ -44,19 +44,7 @@ export default{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: userInfo.email,
-        fullName: userInfo.fullName,
-        userName: userInfo.userName,
-        age: userInfo.age,
-        gender: userInfo.gender,
-        createdAt: userInfo.createdAt,
-        isActived: userInfo.isActived,
-        isBloquedForum: userInfo.isBloquedForum,
-        lastLogin: userInfo.lastLogin,
-        ocupation: userInfo.ocupation,
-        city: userInfo.city,
-        score: userInfo.score,
-        isAdmin: userInfo.isAdmin,
+       ...userInfo
       }),
     });
 

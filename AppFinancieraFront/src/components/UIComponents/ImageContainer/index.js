@@ -1,22 +1,20 @@
 import React, {useState} from 'react';
+import apiUser from '../../../lib/apiUser';
 
-
- import ButtonFullWidth from '../../../components/UIComponents/ButtonFullWidth'; 
- import Modal from '../Modal'
- import SignInForm from '../../UIComponents/SignInForm/index'
+import ButtonFullWidth from '../../../components/UIComponents/ButtonFullWidth'; 
+import Modal from '../Modal'
+import SignInForm from '../../UIComponents/SignInForm/index'
 
 import styles from './index.module.css' 
 
-function ImageContainer() {
+function ImageContainer(props) {
+
   const [showModal, toggleModal] = useState(false)
-  const [userInfo, setUserInfo] = useState({userName:'', password:''})  
-  const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Registrate.</button> ]
-  
-  
-  function handleCloseModal () {
-   toggleModal(false); 
-   setUserInfo({userName:'', password:''})
-  }
+
+  function handleUserInfo (userInfo) {
+    apiUser.newUser({...userInfo})
+    props.history.push('/curso')
+}
   
   return (
   
@@ -28,14 +26,8 @@ function ImageContainer() {
             <ButtonFullWidth  className={`${styles.ButonSize} `}  Title="COMIENZA AHORA" handleClick={()=>{toggleModal(true)}}/>
             </div>
         </div>
-        <Modal isOpen={showModal} title='Registrate.' buttons={buttons} onClose={handleCloseModal}>
-        <SignInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
-                  const userName = event.target.value
-                  setUserInfo({...userInfo, userName})
-                }} valuePassword={userInfo.password} onChangePassword={(event)=>{
-                  const password = event.target.value
-                  setUserInfo({...userInfo, password})
-                }} />
+        <Modal isOpen={showModal} title='Registrate.' >
+        <SignInForm handleUserInfo={handleUserInfo} handleCloseModal={()=>{toggleModal(false)}} />
         </Modal>
     </div>
          

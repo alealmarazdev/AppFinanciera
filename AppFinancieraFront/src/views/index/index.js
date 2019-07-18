@@ -22,17 +22,18 @@ import Challenge from '../../asset/image/CardsImage/idea.svg'
 
 
 
-function Index() {
+function Index(props) {
 
 const [showModal, toggleModal] = useState(false)
 const [userInfo, setUserInfo] = useState({userName:'', password:''})
 
 const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Iniciar sesion.</button> ]
 
-function handleCloseModal () {
+function handleCloseModal (props) {
  toggleModal(false); 
  setUserInfo({userName:'', password:''})
 }
+
 
   return (
     //1st page - log in 

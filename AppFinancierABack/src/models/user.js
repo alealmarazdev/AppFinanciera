@@ -16,15 +16,13 @@ const userSchema = new Schema({
   fullName: {
     type: String,
     minlength: 10,
-    maxlength: 100,
-    required: true
+    maxlength: 100
   },
 
   userName: {
     type: String,
     minlength: 3,
-    maxlength: 50,
-    required: true
+    maxlength: 50
   },
 
   age: {
@@ -40,12 +38,11 @@ const userSchema = new Schema({
       'female',
       'other'
     ],
-    required: true
+    default: 'other'
   },
 
   createdAt: {
-    type: Date,
-    required: true
+    type: Date
   },
 
   isActived: {

@@ -10,11 +10,11 @@ function Content () {
  
      return (
       <div >
-        <Navbar />
+       <Navbar /> 
         <TitleGames title="¿QUÉ QUIERES APRENDER HOY?" subtitle="Selecciona el tema que mas te interese."/>
-        <CardContainer/>
+       <CardContainer/> 
         <Footer />
-        <Chatbot />
+        <Chatbot /> 
         
       </div>
     )
