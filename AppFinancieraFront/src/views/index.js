@@ -16,7 +16,7 @@ import Profile from '../asset/image/profile.svg'
 import AvatarW from '../asset/image/avatarW.png'
 
 
-function Index() {
+function Index(props) {
 
 const [showModal, toggleModal] = useState(false)
 const [userInfo, setUserInfo] = useState({userName:'', password:''})
@@ -39,7 +39,7 @@ function handleCloseModal () {
                 <ButtonMed Title="Log-In" handleClick={()=>{toggleModal(true)}}/>
             </div>
         </div>   
-        <Header/>
+        <Header history={props.history}/>
         <Info />
         <CardContainerNoImage />
         <MarkContainer />
@@ -51,8 +51,8 @@ function handleCloseModal () {
               <Card to="/theme/Word/Two" title='Modelo de negocio' subtitle='Aprende a desarrollar tu idea de negocio.' image={AvatarW}/>
           </div>
         </div>
-        <ImageContainer />
-        <Footer/>
+        <ImageContainer history={props.history}/>
+        <Footer history={props.history}/>
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
                   const userName = event.target.value
