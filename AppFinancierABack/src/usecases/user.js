@@ -75,12 +75,11 @@ const getById = async (userId) => {
   return cleanUser
 }
 
-// const updateScore = async (userId, points) => {
-//  const user = await User.findById(userId).lean()
-//  let { score } = user
-//  score = score + points
-//  return score
-// }
+const UpdateScore = async (userId, themeId) => {
+  const theme = await Themes.find(themeId).lean()
+  const { topic, numSerial,expPoints } = theme 
+  const tableProgress = await Progress.find(user)
+}
 
 module.exports = {
   signUp,

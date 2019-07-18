@@ -1,4 +1,6 @@
 const { model: Progress } = require('../models/progress')
+const { model: Themes } = require('../models/theme')
+const { model: Users } = require('../models/user')
 
 const newProgress = async (progressData = {}) => {
   const {
@@ -31,6 +33,7 @@ const getById = async (progressId) => {
   const foundProgress = await Progress.findById(progressId).lean()
   return foundProgress
 }
+
 
 module.exports = {
   newProgress,
