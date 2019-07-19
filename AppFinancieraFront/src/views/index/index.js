@@ -27,7 +27,7 @@ function Index(props) {
 const [showModal, toggleModal] = useState(false)
 const [userInfo, setUserInfo] = useState({userName:'', password:''})
 
-const buttons = [<button type="button" className="btn btn-danger" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className="btn btn-success" onClick={() => {console.log(userInfo); handleCloseModal()}}>Iniciar sesion.</button> ]
+const buttons = [<button type="button" className="btn btn-outline-secondary" onClick={() => {console.log(userInfo); handleCloseModal()}}>Cancelar.</button>, <button type="button" className={`btn ${styles.btnPurple}`} onClick={() => {console.log(userInfo); handleCloseModal()}}>Iniciar sesion.</button> ]
 
 function handleCloseModal (props) {
  toggleModal(false); 

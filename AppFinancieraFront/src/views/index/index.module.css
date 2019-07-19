@@ -38,6 +38,20 @@
     margin-right: 15%;
 }
 
+.btnPurple {
+    background-color:rgb(126, 69, 175);
+    color: white;
+    font-weight: 900;
+    width: 40%;
+   }
+   
+   .btnPurple:hover {
+       background-color:#BF82F4;
+       color: white;
+       font-weight: 900;
+   }
+   
+   
 .girl{
     width: 50vh;
     height: 50vh;
