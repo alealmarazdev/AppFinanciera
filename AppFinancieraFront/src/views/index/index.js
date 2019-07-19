@@ -67,7 +67,7 @@ function handleCloseModal (props) {
      <div className="container">
      <div className="row p-0 m-0">        
           <div className="col-sm-6 mb-5 ">
-              <Card to="/theme/Word/One" title='RETOS DIARIOS' subtitle="PON EN PRÁCTICA TUS CONOCIMIENTOS CON RETOS DIARIOS QUE HARÁN QUE LAS FINANZA SEAN TAN FÁCILES COMO RESPIRAR" alt="Challenge" image={Challenge}/>    
+              <Card to="/theme/Word/One" title='Hola RETOS DIARIOS' subtitle="PON EN PRÁCTICA TUS CONOCIMIENTOS CON RETOS DIARIOS QUE HARÁN QUE LAS FINANZA SEAN TAN FÁCILES COMO RESPIRAR" alt="Challenge" image={Challenge}/>    
           </div> 
           <div class="col-sm-6 mb-5 ">
               <Card to="/theme/Word/Two" title='APRENDE EN CUALQUIER LUGAR' subtitle='USA FISHNANCE EN TU LAPTOP, CELULAR O TABLET DÓNDDE SEA Y A LA HORA QUE QUIERAS.' Lalt="Devices" image={Devices}/>
