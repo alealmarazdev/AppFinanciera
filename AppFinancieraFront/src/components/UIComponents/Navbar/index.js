@@ -1,10 +1,23 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import styles from './index.module.css';
-import NavbarList from '../NavbarList/index'
 import { Link } from 'react-router-dom'
+import apiUser from '../../../lib/apiUser';
+import medalla from '../../../asset/image/Icons/medal.svg'
+import trofeo from '../../../asset/image/Icons/trophy.svg'
+import profile from '../../../asset/image/profile.svg'
 
-function Navbar(){
 
+function Navbar(props){
+  const [state, setState]=useState([])
+  useEffect(()=>{
+    async function getData(){
+       const user= await apiUser.getUser()
+    setState(user)
+    }
+   getData()
+
+  },[])
+  
     return (
         <nav className={`${styles.navFondo} navbar navbar-expand-lg navbar-light bg-light mb-5 pb-0`}>
         <Link className="navbar-brand font-weight-bolder" to="/">FISHNANCE</Link>
@@ -26,7 +39,7 @@ function Navbar(){
             
           </ul>
           <div className="nav-item py-2">
-            <NavbarList userName="Alberto Maturano" themeNumber="2" levelNumber="2"/>
+            {/* NavbarList */}
 
             </div> 
         </div>
