@@ -6,7 +6,9 @@
 .portada {
   width: 125px;
   height: 125px;
-  background-color: #3aae98;
+  background-image: url('../../../asset/image/CardsImage/card-back.svg');
+  border: 3px solid #3aae98;
+  border-radius: 10px;
 }
 
 .contenido {

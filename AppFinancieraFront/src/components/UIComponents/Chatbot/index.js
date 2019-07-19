@@ -30,7 +30,7 @@ function Chatbot() {
 
     sound.play();
 
-    const apiUrl = `https://fishnance-shy-raven.mybluemix.net/sendMessage?message=${state.question}`
+    const apiUrl = `https://fishnance-back.mybluemix.net/sendMessage?message=${state.question}`
 
     const apiCall = await fetch(apiUrl, {
       method: 'GET',

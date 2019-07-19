@@ -55,14 +55,14 @@ function handleCloseModal (props) {
               </div>
           </div>
      </div>
-     <MarkContainer className= "mt-0" />
-     <div className="container-fluid">
-       <div className="row d-flex content-justify-center">
-     <div className= {`${styles.BgquoteBg1} content-fluid col-12 col-md-3 p-0 m-0 mt-5`}></div>
-     <div className= {`${styles.Bgquote} content-fluid col-12 col-md-6 p-0 m-0 mt-5`}></div>
-     <div className= {`${styles.BgquoteBg2} content-fluid col-12 col-md-3 col-md3 p-0 m-0 mt-5`}></div>
-     </div>
-     </div>
+        <MarkContainer className= "mt-0" />
+          <div className="container-fluid">
+            <div className="row d-flex content-justify-center">
+          <div className= {`${styles.BgquoteBg1} content-fluid col-12 col-md-3 p-0 m-0 mt-5`}></div>
+          <div className= {`${styles.Bgquote} content-fluid col-12 col-md-6 p-0 m-0 mt-5`}></div>
+          <div className= {`${styles.BgquoteBg2} content-fluid col-12 col-md-3 col-md3 p-0 m-0 mt-5`}></div>
+          </div>
+          </div>
      <CardContainerNoImage />
      <div className="container">
      <div className="row p-0 m-0">        
@@ -73,9 +73,9 @@ function handleCloseModal (props) {
               <Card to="/theme/Word/Two" title='APRENDE EN CUALQUIER LUGAR' subtitle='USA FISHNANCE EN TU LAPTOP, CELULAR O TABLET DÓNDDE SEA Y A LA HORA QUE QUIERAS.' Lalt="Devices" image={Devices}/>
           </div>
         </div>
-        </div>
-        <ImageContainer />
-        <LandingFooter/>
+
+         <ImageContainer history={props.history}/>
+        <LandingFooter history={props.history}/> 
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
                   const userName = event.target.value
@@ -89,6 +89,8 @@ function handleCloseModal (props) {
   
     
     </div>
+    </div>
+
 
   )
 }
