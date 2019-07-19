@@ -100,7 +100,7 @@
 .chatbotwrapper .chatbotform {
   width: 100%;
   border-top: 1px solid #333;
-  height: 10vh;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   padding: 15px;
