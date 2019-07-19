@@ -1,18 +1,19 @@
 const { model: Progress } = require('../models/progress')
-const { model: Themes } = require('../models/theme')
-const { model: Users } = require('../models/user')
+
 
 const newProgress = async (progressData = {}) => {
   const {
     idUser,
     idTopic,
-    idTheme
+    idTheme,
+    lastLevel
   } = progressData
 
   const progress = new Progress({
     idUser,
     idTopic,
-    idTheme
+    idTheme,
+    lastLevel
   })
   const error = progress.validateSync()
   if (error) throw error
