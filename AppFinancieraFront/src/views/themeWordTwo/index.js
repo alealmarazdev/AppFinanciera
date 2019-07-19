@@ -16,11 +16,11 @@ function ThemeWordTwo () {
      return (
       <div >
         <Navbar />
-        <TitleGames title="Conceptos básicos" subtitle="Aprende las bases para iniciar"/>
+        <TitleGames title="Modelos de Negocio" subtitle="¡Los fundamentos de un buen plan!"/>
         <div className={styles.bgGame}> </div>
 
         <Link className={styles.mapeado} to="/theme/themeOne"> 
-          <h4 className="mb-0 text-center">Emprender</h4>
+          <h4 className="mb-0 text-center">¿Qué son?</h4>
           {/* <FlipCard flipped={this.props.estaSiendoComparada || this.props.fueAdivinada}
           disabled={false} type="revolving-door"
         >   */}
@@ -30,22 +30,22 @@ function ThemeWordTwo () {
         </Link>
 
         <Link className={styles.mapeado1} to="/theme/themeOne">
-          <h4 className="mb-0 text-center">Personas ante la ley.</h4>
+          <h4 className="mb-0 text-center">Lineas de acción</h4>
           <img src={Crown} alt="nivel"/>
         </Link>  
         <div className={styles.bgContinue}> </div>
 
         <Link className={styles.mapeado2} to="/theme/themeOne">
-        <h4 className="mb-0 text-center">Fines de las sociedades.</h4>
+        <h4 className="mb-0 text-center">Validación</h4>
           <img src={Crown} alt="nivel"/>
         </Link>
       
         <Link className={styles.mapeado3} to="/theme/themeOne">
-        <h4 className="mb-0 text-center">Registros.</h4>
+        <h4 className="mb-0 text-center">Las 3 D's</h4>
           <img src={Crown} alt="nivel"/>
         </Link>
         <Link className={styles.mapeado4} to="/curso">
-        <h4 className="mb-0 text-center">Siguiente tema.</h4>
+        <h4 className="mb-0 text-center">MVP</h4>
           <img src={Crown} alt="nivel"/>
         </Link>
         {/* <div className={styles.mapeado6}>
