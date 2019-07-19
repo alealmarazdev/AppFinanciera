@@ -28,7 +28,7 @@ function Footer(props) {
 
           <h5 className={`card-title  ${styles.colorCyan}`}>Suscribete a nuestro Nesletter</h5>
           <p  className={`card-text  ${styles.colorCyan}`}>With supporting text below as a natural lead-in to additional content.</p>
-          <ButtonFullWidth class="btn btn-primary" className={`${styles.ButonSize}`} Title="Jugar ahora!" handleClick={() => { toggleModal(true) }} />
+          <ButtonFullWidth class="btn btn-primary btn-block" className={`${styles.ButonSize} ${styles.buttonFooter}`} Title="SUSCRIBIR" handleClick={() => { toggleModal(true) }} />
         </div>
         <div className={`card-body col-12 col-md-3`}>
 

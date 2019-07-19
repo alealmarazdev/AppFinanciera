@@ -13,8 +13,7 @@ function PrincipalCardLeft(props){
     } = props;
 
     return (
-    <div className="w-50 mb-1"> 
-        <div class="card mb-3">
+   <div class="card">
             <img src={imageSRC} class="card-img-top" alt="..."/>
             <div class="card-body">
                 <h5 class="card-title">{title}</h5>
@@ -24,7 +23,6 @@ function PrincipalCardLeft(props){
                 </p>
             </div>
       </div>
-    </div>
 )
 }
 

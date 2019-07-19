@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 import TitleGames from '../../components/UIComponents/TitleAndSubtitle'
 import Navbar from '../../components/UIComponents/Navbar'
 import Chatbot from '../../components/UIComponents/Chatbot'
-/* import Footer from '../../components/UIComponents/Footer' */
 import Crown from '../../asset/image/Icons/crown.svg'
 /* import Lock from '../../asset/image/Icons/lock.svg' */
 /* import ButtonLink from '../../components/UIComponents/ButtonLink/index' */
