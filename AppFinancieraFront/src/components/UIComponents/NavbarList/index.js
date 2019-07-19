@@ -8,7 +8,7 @@ function NavbarList(props) {
     const {
       userName,
       themeNumber,
-      levelNumber
+      score
     } = props;
     return (
     <div className={`${styles.usuarioContainer}  d-flex flex-row mx-0`}>
@@ -27,7 +27,7 @@ function NavbarList(props) {
                 </aside>
                 <aside className={`${styles.levelArchivement} d-flex flex-row `}>
                     <div className={`${styles.numberLevel} font-weight-bold d-flex justify-content-end`}>
-                        {levelNumber}
+                        {score}
                     </div>
                     <div className={`${styles.imgLevel}  d-flex justify-content-center`}>
                     <img src={medalla} className="" alt="medalla"/>
