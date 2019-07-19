@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken')
 
 const { model: User } = require('../models/user')
+const { model: Theme } = require('../models/theme')
+const { model: Progress } = require('../models/progress')
+const useProgress = require ('../usecases/progress')
 const bcrypt = require('../lib/bcrypt')
 
 const signUp = async (userData = {}) => {
@@ -75,10 +78,55 @@ const getById = async (userId) => {
   return cleanUser
 }
 
-const UpdateScore = async (userId, themeId) => {
-  const theme = await Themes.find(themeId).lean()
-  const { topic, numSerial,expPoints } = theme 
-  const tableProgress = await Progress.find(user)
+const updateScore = async (userId, themeId) => {
+  
+  const theme = await Theme.findById(themeId).lean()
+  let userInfo = await User.findById(userId).lean()
+
+  const { score }= userInfo
+  const { topic, numSerial, expPoints } = theme
+  
+  const newScore = score+expPoints
+
+  const scoreData = {
+    score: newScore
+  }
+
+  const ProgressData ={
+    idUser: userId,
+    idTopic: topic,
+    idTheme: themeId,
+    lastLevel: numSerial
+  }
+
+  const findData = {
+    idUser: userId,
+    idTopic: topic
+  }
+  
+  let progress = await Progress.find(findData).lean()
+
+  if(!progress[0]){
+    console.log('object')
+    progress = await useProgress.newProgress(ProgressData)
+    userInfo = await User.findByIdAndUpdate(userId, scoreData)
+    return userInfo
+  }
+
+  else{
+    const { lastLevel, _id} = progress[0]
+    if(lastLevel<numSerial){
+    userInfo = await User.findByIdAndUpdate(userId, scoreData)
+    progressInfo= await Progress.findByIdAndUpdate(_id,ProgressData)  
+    }
+
+    else {
+      return userInfo
+    }
+  }
+
+  return userInfo
+
 }
 
 module.exports = {
@@ -87,5 +135,6 @@ module.exports = {
   deleteById,
   updateById,
   getAll,
-  getById
+  getById,
+  updateScore
 }
