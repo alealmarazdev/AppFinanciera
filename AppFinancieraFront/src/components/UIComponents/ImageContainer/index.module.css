@@ -9,6 +9,8 @@
      background-image: url('../../../asset/image/estrellas.png'),linear-gradient(#3AAE98,#BF82F4); 
      box-sizing: border-box;
      overflow: hidden;
+     padding-right: 0;
+     padding-left: 0;
     }
 .estrellaFugaz {
 

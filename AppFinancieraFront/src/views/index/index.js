@@ -55,8 +55,8 @@ function handleCloseModal (props) {
               </div>
           </div>
      </div>
-        <MarkContainer className= "mt-0" />
-          <div className="container-fluid">
+    <MarkContainer className= "mt-0" />
+    <div className="container-fluid">
             <div className="row d-flex content-justify-center">
           <div className= {`${styles.BgquoteBg1} content-fluid col-12 col-md-3 p-0 m-0 mt-5`}></div>
           <div className= {`${styles.Bgquote} content-fluid col-12 col-md-6 p-0 m-0 mt-5`}></div>
@@ -73,8 +73,12 @@ function handleCloseModal (props) {
               <Card to="/theme/Word/Two" title='APRENDE EN CUALQUIER LUGAR' subtitle='USA FISHNANCE EN TU LAPTOP, CELULAR O TABLET DÓNDDE SEA Y A LA HORA QUE QUIERAS.' Lalt="Devices" image={Devices}/>
           </div>
         </div>
+        </div>
 
+    <div>
          <ImageContainer history={props.history}/>
+
+
         <LandingFooter history={props.history}/> 
         <Modal isOpen={showModal} title='Inicia sesion.' buttons={buttons} onClose={handleCloseModal}>
           <LogInForm valueEmail={userInfo.userName} onChangeEmail={(event)=>{
@@ -84,13 +88,14 @@ function handleCloseModal (props) {
                   const password = event.target.value
                   setUserInfo({...userInfo, password})
                 }} />
+              
         </Modal>
+       </div>
+
    
   
     
     </div>
-    </div>
-
 
   )
 }

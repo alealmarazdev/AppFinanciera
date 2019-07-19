@@ -17,8 +17,10 @@ function ImageContainer(props) {
 }
   
   return (
-  
-    <div className={`${styles.bienvenida} `}>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12 p-0 m-0">
+        <div className={`${styles.bienvenida} `}>
         <div className={`${styles.estrellaFugaz} `}> </div>
         <div className="d-flex flex-column "> 
             <h6 className={`text-center`}>Unete a nuestra comunidad y domina las finanzas</h6>
@@ -29,6 +31,11 @@ function ImageContainer(props) {
         <Modal isOpen={showModal} title='Registrate.' >
         <SignInForm handleUserInfo={handleUserInfo} handleCloseModal={()=>{toggleModal(false)}} />
         </Modal>
+    </div>
+
+
+        </div>
+      </div>
     </div>
          
   )
